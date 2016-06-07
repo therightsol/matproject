@@ -1,0 +1,89 @@
+/*
+	-----------------------------------------------------------
+				Furqan CSS Started
+	-----------------------------------------------------------
+*/
+
+.form_sign{
+
+	margin-top:40px;
+	padding-bottom:200px;
+}
+.form_register{
+	
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.passwrd_margin{
+	
+	margin-left:60px;
+}
+.a_forget{
+	
+	margin-left:20px;
+	color:blue;
+}
+.signin_h1{
+	margin-left:50px;
+	margin-top:20px;
+}
+.lable_form{
+	font-size:12px;
+	font-weight:bold;
+}
+.reset_h1{
+	margin-left:200px;
+	margin-top:20px;
+	margin-bottom:30px;
+}
+
+.noteregister{
+
+	margin-top:50px;
+	margin-bottom:200px;
+}
+.notesign{
+
+	margin-top:50px;
+	margin-bottom:200px;
+}
+.linote{
+	color:gray;
+	font-size:12px;
+	font-weight: bold;
+
+}
+
+/*
+	-----------------------------------------------------------
+				Furqan CSS End
+	-----------------------------------------------------------
+*/
+/*
+	-----------------------------------------------------------
+				Rashid CSS Start
+	-----------------------------------------------------------
+*/
+.banner{
+	width: auto;
+	height: 140px;
+	background-image: url("../images/banner/banner.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.sign{
+
+	padding: 55px;
+	font-size: xx-large;
+	text-transform: none;
+	color: #f5f5f5;
+}
+
+
+
+
+/*
+	-----------------------------------------------------------
+				Rashid CSS End
+	-----------------------------------------------------------
+*/
