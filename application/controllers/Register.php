@@ -23,14 +23,39 @@ class Register extends CI_Controller {
                 array(
                     'field'     =>  'fname',
                     'label'     =>  'First Name',
-                    'rules'     =>  'required'
+                    'rules'     =>  'required|min_lenght[3]|max_lenght[7]'
                 ),
-
+                array(
+                    'field'     =>  'lname',
+                    'label'     =>  'Last Name',
+                    'rules'     =>  'required|min_lenght[3]|max_lenght[7]'
+                ),
                 array(
                     'field'     =>  'un',
                     'label'     =>  'User Name',
-                    'rules'     =>  'required|alpha_numeric'
+                    'rules'     =>  'required|alpha_numeric|max_lenght[9]'
                 ),
+                array(
+                    'field'     =>  'pass',
+                    'label'     =>  'Password',
+                    'rules'     =>  'required|min_lenght[8|max_lenght[16|alpha_numeric'
+                ),
+                array(
+                    'field'     =>  'conpass',
+                    'label'     =>  'confirm password',
+                    'rules'     =>  'required|min_lenght[8]|max_lenght[16]|matches[pass]|alpha_numeric'
+                ),
+                array(
+                    'field'     =>  'email',
+                    'label'     =>  'E-mail ',
+                    'rules'     =>  'valid_email'
+                ),
+                array(
+                    'field'     =>  'phone',
+                    'label'     =>  'Mobile No. ',
+                    'rules'     =>  'numeric|exact_lenght[11]|required'
+                ),
+
             );
 
             $this->form_validation->set_rules($config);
