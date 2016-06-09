@@ -51,17 +51,19 @@
                 <div class="col-sm-offset-1 col-xs-10 col-sm-6 col-md-6 form_sign">
 
 
-
+                    <?php if(! empty($validation_errors)) : ?>
                     <div class="alert alert-danger">
                         <?php echo $validation_errors; ?>
                     </div>
+                    <?php endif; ?>
 
 
                     <form class="form-horizontal" style="margin-top:20px;" action="<?php echo $root; ?>register" method="post">
                         <div class="form-group">
                             <label for="fname" class="lable_form col-sm-3 control-label">First Name</label>
                             <div class="col-xs-10 col-sm-7 ">
-                                <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name">
+                                <input type="text" name="fname" value="<?php if($_POST) echo $_POST['fname']; ?>"
+                                       class="form-control" id="fname" placeholder="First Name">
                             </div>
                         </div>
                         <div class="form-group">

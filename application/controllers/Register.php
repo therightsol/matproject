@@ -13,6 +13,7 @@ class Register extends CI_Controller {
     {
 
         $data = array();
+        $data['validation_errors'] = '';
 
         if(filter_input_array(INPUT_POST)){
 
@@ -23,37 +24,37 @@ class Register extends CI_Controller {
                 array(
                     'field'     =>  'fname',
                     'label'     =>  'First Name',
-                    'rules'     =>  'required|min_lenght[3]|max_lenght[7]'
+                    'rules'     =>  'required|min_length[3]|max_length[7]'
                 ),
                 array(
                     'field'     =>  'lname',
                     'label'     =>  'Last Name',
-                    'rules'     =>  'required|min_lenght[3]|max_lenght[7]'
+                    'rules'     =>  'required|min_length[3]|max_length[7]'
                 ),
                 array(
                     'field'     =>  'un',
                     'label'     =>  'User Name',
-                    'rules'     =>  'required|alpha_numeric|max_lenght[9]'
+                    'rules'     =>  'required|alpha_numeric|max_length[9]'
                 ),
                 array(
                     'field'     =>  'pass',
                     'label'     =>  'Password',
-                    'rules'     =>  'required|min_lenght[8|max_lenght[16|alpha_numeric'
+                    'rules'     =>  'required|min_length[8]|max_length[16]|alpha_numeric'
                 ),
                 array(
                     'field'     =>  'conpass',
                     'label'     =>  'confirm password',
-                    'rules'     =>  'required|min_lenght[8]|max_lenght[16]|matches[pass]|alpha_numeric'
+                    'rules'     =>  'required|min_length[8]|max_length[16]|matches[pass]|alpha_numeric'
                 ),
                 array(
                     'field'     =>  'email',
                     'label'     =>  'E-mail ',
-                    'rules'     =>  'valid_email'
+                    'rules'     =>  'valid_email|required'
                 ),
                 array(
                     'field'     =>  'phone',
                     'label'     =>  'Mobile No. ',
-                    'rules'     =>  'numeric|exact_lenght[11]|required'
+                    'rules'     =>  'numeric|exact_length[11]|required'
                 ),
 
             );
@@ -62,6 +63,25 @@ class Register extends CI_Controller {
 
             if(! $this->form_validation->run() == FALSE){
                 // When Success
+
+                $fname      = $this->input->post('fname', True);
+                $lastname   = $this->input->post('lname', True);
+                $phone      = $this->input->post('phone', True);
+                $email      = $this->input->post('email', True);
+                $pass       = $this->input->post('pass', True);
+                $conpass    = $this->input->post('conpass', True);
+                $username   = $this->input->post('un', True);
+
+                $this->load->model('user');
+
+
+
+                $name = $fname . ' ' . $lastname;
+
+
+
+
+
             }else {
                 // when fails
 
