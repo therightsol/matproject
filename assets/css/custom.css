@@ -52,6 +52,23 @@
 	font-size:12px;
 	font-weight: bold;
 
+
+}
+.lable_user{
+
+	color:white;
+	font-weight: bold;
+	font-size: 14px;
+}
+.userprofile{
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+.inpute_profile{
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+
 }
 
 /*
