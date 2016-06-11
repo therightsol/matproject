@@ -37,7 +37,7 @@
 
                 </li>
                 <li>
-                    <a href="Register">SignUp</a>
+                    <a  href="Register">SignUp</a>
 
                 </li>
                 <li>
