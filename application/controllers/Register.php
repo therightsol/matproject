@@ -56,7 +56,7 @@ class Register extends CI_Controller {
                 array(
                     'field'     =>  'phone',
                     'label'     =>  'Mobile No. ',
-                    'rules'     =>  'numeric|exact_length[11]|required'
+                    'rules'     =>  'numeric|exact_length[13]|required'
                 ),
 
             );

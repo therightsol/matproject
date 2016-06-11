@@ -33,15 +33,15 @@
 
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a<?php if ($activepage == 'contact'): ; ?> class="active" <?php endif; ?>   href="<?php echo $root; ?>contact">Contact</a>
 
                 </li>
                 <li>
-                    <a <?php if ($activepage == 'register'): ; ?> class="active" <?php endif; ?>  href="Register">SignUp</a>
+                    <a <?php if ($activepage == 'register'): ; ?> class="active" <?php endif; ?>  href="<?php echo $root; ?>register">SignUp</a>
 
                 </li>
                 <li>
-                    <a href="signin">LogIn</a>
+                    <a <?php if ($activepage == 'signin'): ; ?> class="active" <?php endif; ?>  href="<?php echo $root; ?>signin">LogIn</a>
 
                 </li>
                 
@@ -53,50 +53,26 @@
     <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
         <li>
-            <a class="active" href="index.html">Home</a>
-            <ul class="dropdown">
-                <li><a class="active" href="index.html">Home Main Version</a>
-                </li>
+            <a <?php if ($activepage == 'home'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>">Home</a>
 
-            </ul>
         </li>
         <li>
-            <a href="about.html">Pages</a>
-            <ul class="dropdown">
-                <li><a href="about.html">About</a>
-                </li>
+            <a <?php if ($activepage == 'about'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>about">About</a>
 
-            </ul>
         </li>
         <li>
-            <a href="#">Shortcodes</a>
-            <ul class="dropdown">
-                <li><a href="tabs.html">Tabs</a>
-                </li>
+            <a <?php if ($activepage == 'contact'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>Contact">Register</a>
 
-            </ul>
         </li>
         <li>
-            <a href="portfolio-3.html">Portfolio</a>
-            <ul class="dropdown">
-                <li><a href="portfolio-2.html">2 Columns</a>
+            <a <?php if ($activepage == 'register'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>register">SignUp</a>
 
-            </ul>
         </li>
         <li>
-            <a href="blog.html">Blog</a>
-            <ul class="dropdown">
-                <li><a href="blog.html">Blog - right Sidebar</a>
-                </li>
-                <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a>
-                </li>
-                <li><a href="single-post.html">Blog Single Post</a>
-                </li>
-            </ul>
+            <a <?php if ($activepage == 'Signin'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>signin">LogIn</a>
+
         </li>
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
+
     </ul>
     <!-- Mobile Menu End -->
 

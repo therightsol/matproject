@@ -7,6 +7,7 @@ class ResetPassword extends CI_Controller {
     {
 
         $data = array();
+        $data['activepage'] = 'ResetPassword';
         $data['validation_errors'] = '';
 
         if(filter_input_array(INPUT_POST)){

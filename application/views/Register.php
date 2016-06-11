@@ -50,24 +50,17 @@
 
                 <div class="col-sm-offset-1 col-xs-10 col-sm-6 col-md-6 form_sign">
 
-
-                    <?php if(! empty($validation_errors)) : ?>
-                    <div class="alert alert-danger">
-                        <?php echo $validation_errors; ?>
-                    </div>
-                    <?php endif; ?>
-
-
                     <form class="form-horizontal" style="margin-top:20px;" action="<?php echo $root; ?>register" method="post">
                         <div class="form-group">
                             <label for="fname" class="lable_form col-sm-3 control-label">First Name</label>
-                                       <?php if($_POST):
-                                                echo form_error('fname', '<strong class="red">', '</strong>');
-                                            endif;
-                                        ?>
+
                             <div class="col-xs-10 col-sm-7 ">
                                 <input type="text" name="fname" value="<?php if($_POST) echo $_POST['fname']; ?>"
                                        class="form-control" id="fname" placeholder="First Name">
+                                <?php if($_POST):
+                                    echo form_error('fname', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -84,6 +77,10 @@
                             <span id="usernamestatus"></span>
                             <div class="col-xs-10 col-sm-7 ">
                                 <input  type="text" name="un"  class="form-control" id="Username" placeholder="UserName">
+                                <?php if($_POST):
+                                    echo form_error('un', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
                         </div>
 
@@ -94,6 +91,10 @@
                             <label for="Password" class="lable_form col-sm-offset-1 col-sm-2 control-label">Password</label>
                             <div class="col-sm-7">
                                 <input type="password" name="pass"  class="form-control" id="Password" placeholder="Password">
+                                <?php if($_POST):
+                                    echo form_error('pass', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
 
                         </div>
@@ -101,6 +102,10 @@
                             <label for="cPassword" class="lable_form col-sm-3 control-label">Confirm Passowrd </label>
                             <div class="col-sm-7">
                                 <input type="password"  name="conpass"   class="form-control" id="cPassword" placeholder="Confirm Password">
+                                <?php if($_POST):
+                                    echo form_error('conpass', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
                         </div>
 
@@ -109,6 +114,10 @@
                             <label for="email" class="lable_form col-sm-3 control-label">Email</label>
                             <div class="col-xs-10 col-sm-7">
                                 <input type="email"  name="email"   class="lable_form form-control" id="email" placeholder="Email">
+                                <?php if($_POST):
+                                    echo form_error('email', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
                         </div>
 
@@ -120,6 +129,10 @@
 
                             <div class="col-xs-8 col-sm-7">
                                 <input type="text" name="phone"  class="form-control" id="phonenumber" placeholder="+923001234567">
+                                <?php if($_POST):
+                                    echo form_error('phone', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
                             </div>
 
                         </div>

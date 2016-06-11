@@ -8,6 +8,7 @@ class Signin extends CI_Controller {
 
         $data = array();
         $data['validation_errors'] = '';
+        $data['activepage'] = 'Signin';
 
         if(filter_input_array(INPUT_POST)){
 
