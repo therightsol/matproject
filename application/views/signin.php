@@ -68,14 +68,14 @@
                 <div class="form-group">
                     <label for="Username" class="lable_form col-sm-3 control-label">User Name</label>
                     <div class="col-xs-10 col-md-8">
-                        <input type="name" class="form-control" id="Username" placeholder="UserName">
+                        <input type="text" name="un" class="form-control" id="Username" placeholder="UserName">
                         <span id="Error"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Password" class="lable_form col-sm-3 control-label">Password</label>
                     <div class="col-xs-10 col-md-8">
-                        <input type="password" class="form-control" id="Password" placeholder="Password">
+                        <input type="password" name="pass" class="form-control" id="Password" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
@@ -100,7 +100,11 @@
         </div>
         </div>
 </div>
-
+<?php if(! empty($validation_errors)) : ?>
+    <div class="alert alert-danger">
+        <?php echo $validation_errors; ?>
+    </div>
+<?php endif; ?>
 
     <!-- Start Footer Section -->
 <?php include 'includes/footer.inc';?>
