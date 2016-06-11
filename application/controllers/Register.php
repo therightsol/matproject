@@ -12,9 +12,11 @@ class Register extends CI_Controller {
     public function index()
     {
 
+
+
         $data = array();
         $data['validation_errors'] = '';
-
+        $data['activepage'] = 'register';
         if(filter_input_array(INPUT_POST)){
 
 
@@ -100,5 +102,19 @@ class Register extends CI_Controller {
 
         }
 
+    }
+
+    public function checkusername(){
+        // data base
+
+        $username = $_POST['un'];
+
+        $data = array('alishan','faheem');
+
+        if(in_array($username, $data)){
+            echo 'username is not available.';
+        }else {
+            echo 'Congratulations! ' . $username . ' is available';
+        }
     }
 }

@@ -25,11 +25,11 @@
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="active" href="<?php echo $root;?>">Home</a>
+                    <a <?php if ($activepage == 'home'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>">Home</a>
 
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a <?php if ($activepage == 'about'): ; ?> class="active" <?php endif; ?> href="<?php echo $root; ?>about">About</a>
 
                 </li>
                 <li>
@@ -37,7 +37,7 @@
 
                 </li>
                 <li>
-                    <a  href="Register">SignUp</a>
+                    <a <?php if ($activepage == 'register'): ; ?> class="active" <?php endif; ?>  href="Register">SignUp</a>
 
                 </li>
                 <li>

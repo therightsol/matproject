@@ -61,6 +61,10 @@
                     <form class="form-horizontal" style="margin-top:20px;" action="<?php echo $root; ?>register" method="post">
                         <div class="form-group">
                             <label for="fname" class="lable_form col-sm-3 control-label">First Name</label>
+                                       <?php if($_POST):
+                                                echo form_error('fname', '<strong class="red">', '</strong>');
+                                            endif;
+                                        ?>
                             <div class="col-xs-10 col-sm-7 ">
                                 <input type="text" name="fname" value="<?php if($_POST) echo $_POST['fname']; ?>"
                                        class="form-control" id="fname" placeholder="First Name">
@@ -70,11 +74,14 @@
                             <label for="lname" class="lable_form col-sm-3 control-label">Last Name</label>
                             <div class="col-xs-10 col-sm-7 ">
                                 <input  type="text" name="lname"  class="form-control" id="lname" placeholder="Last Name">
+<?php if($_POST): echo form_error('lname', '<strong class="red">', '</strong>'); endif; ?>
+
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Username" class="lable_form col-sm-3 control-label">User Name</label>
+                            <span id="usernamestatus"></span>
                             <div class="col-xs-10 col-sm-7 ">
                                 <input  type="text" name="un"  class="form-control" id="Username" placeholder="UserName">
                             </div>
