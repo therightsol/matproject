@@ -53,8 +53,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/colors/sky-blue.css" title="sky-blue" media="screen" />
     <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/colors/yellow.css" title="yellow" media="screen" />
 
+
     <!-- Margo JS  -->
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.migrate.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/modernizrr.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>asset/js/bootstrap.min.js"></script>
@@ -71,6 +73,7 @@
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.parallax.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/mediaelement-and-player.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.slicknav.js"></script>
+    <script src="<?php echo $root."assets/";?>js/pwstrength-bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
 
 
     <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

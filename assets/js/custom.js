@@ -23,3 +23,26 @@ jQuery(document).ready(function (){
         });
     });
 });
+/*
+saad js
+ */
+function onFormSubmit(e) {
+    if (!allFieldsValid()) {
+        e.preventDefault();
+        return false;
+    }
+    if (!allFieldset()) {
+        e.preventDefault();
+        return false;
+    }
+}
+$(function() {
+    $('.radio-group label').on('click', function(){
+        $(this).removeClass('not-active').siblings().addClass('not-active');
+    });
+});
+$(document).ready(function(){
+
+    $('#loginform').submit(onFormSubmit);
+});
+

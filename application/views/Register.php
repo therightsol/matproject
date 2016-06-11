@@ -1,7 +1,7 @@
 <?php include 'includes/header.inc';?>
 
     <!-- Full Body Container -->
-    <div id="container">
+    <div id="container" >
 
 
     <!-- Start Header Section -->
@@ -26,126 +26,113 @@
     </div>
     <!-- End Registeration Banner -->
     <!--  Register Form -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3  col-sm-offset-2 noteregister">
+    
 
+    <div class="container" background="<?php echo $root."assets/";?>images/1.jpg">
 
-
-                    <img src="<?php echo $root."assets/";?>images/mat.jpg" alt="" />
-                    <p class="linote">High quality profiles and pictures.</p>
-                    <p class="linote"> Ethical standards to ensure safety.</p>
-                    <p class="linote">24/7 technical support for all members.</p>
-                    <p class="linote"> 100% anonymity for ultimate security.</p>
-                    <p class="linote">Success stories from around the world.</p>
-                    <p class="linote">High quality profiles and pictures.</p>
-                    <p class="linote">Find Your Match.</p>
-
-
-
-
-
-
-                </div>
-
-                <div class="col-sm-offset-1 col-xs-10 col-sm-6 col-md-6 form_sign">
-
-                    <form class="form-horizontal" style="margin-top:20px;" action="<?php echo $root; ?>register" method="post">
-                        <div class="form-group">
-                            <label for="fname" class="lable_form col-sm-3 control-label">First Name</label>
-
-                            <div class="col-xs-10 col-sm-7 ">
-                                <input type="text" name="fname" value="<?php if($_POST) echo $_POST['fname']; ?>"
-                                       class="form-control" id="fname" placeholder="First Name">
-                                <?php if($_POST):
-                                    echo form_error('fname', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Join Now...<small>It's free!</small></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id='loginform' action="<?php echo $root; ?>register" method="post">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="fname" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                        <?php if($_POST):
+                                            echo form_error('fname', '<strong class="red">', '</strong>');
+                                        endif;
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="lname" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                        <?php if($_POST):
+                                            echo form_error('lname', '<strong class="red">', '</strong>');
+                                        endif;
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname" class="lable_form col-sm-3 control-label">Last Name</label>
-                            <div class="col-xs-10 col-sm-7 ">
-                                <input  type="text" name="lname"  class="form-control" id="lname" placeholder="Last Name">
-<?php if($_POST): echo form_error('lname', '<strong class="red">', '</strong>'); endif; ?>
+                            <div class="form-group">
 
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Username" class="lable_form col-sm-3 control-label">User Name</label>
-                            <span id="usernamestatus"></span>
-                            <div class="col-xs-10 col-sm-7 ">
-                                <input  type="text" name="un"  class="form-control" id="Username" placeholder="UserName">
+                                <input type="text" name="un" id="username" class="form-control input-sm" placeholder="User Name">
                                 <?php if($_POST):
                                     echo form_error('un', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
                             </div>
-                        </div>
 
+                            <div class="form-group">
 
-
-
-                        <div class="form-group">
-                            <label for="Password" class="lable_form col-sm-offset-1 col-sm-2 control-label">Password</label>
-                            <div class="col-sm-7">
-                                <input type="password" name="pass"  class="form-control" id="Password" placeholder="Password">
-                                <?php if($_POST):
-                                    echo form_error('pass', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="cPassword" class="lable_form col-sm-3 control-label">Confirm Passowrd </label>
-                            <div class="col-sm-7">
-                                <input type="password"  name="conpass"   class="form-control" id="cPassword" placeholder="Confirm Password">
-                                <?php if($_POST):
-                                    echo form_error('conpass', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="email" class="lable_form col-sm-3 control-label">Email</label>
-                            <div class="col-xs-10 col-sm-7">
-                                <input type="email"  name="email"   class="lable_form form-control" id="email" placeholder="Email">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
                                 <?php if($_POST):
                                     echo form_error('email', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
                             </div>
-                        </div>
+                            <div class="form-group">
 
-
-
-                        <div class="form-group">
-                            <label for="phonenumber" class="lable_form col-sm-3 control-label">Phone No</label>
-
-
-                            <div class="col-xs-8 col-sm-7">
-                                <input type="text" name="phone"  class="form-control" id="phonenumber" placeholder="+923001234567">
+                                <input type="number" name="phone" id="phone" class="form-control input-sm" placeholder="Mobile No:">
                                 <?php if($_POST):
                                     echo form_error('phone', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
                             </div>
 
-                        </div>
-
-
-
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-xs-10 col-sm-4">
-                                <button type="submit" class="btn-block btn-primary">Registeration</button>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="pass" id="password" class="form-control input-sm" placeholder="Password">
+                                        <?php if($_POST):
+                                            echo form_error('pass', '<strong class="red">', '</strong>');
+                                        endif;
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="conpass" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                        <?php if($_POST):
+                                            echo form_error('conpass', '<strong class="red">', '</strong>');
+                                        endif;
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <label class="control-label" for="gender">I Am...</label>
+                                <div >
+                                    <div class="input-group">
+                                        <div class="btn-group radio-group">
+                                            <label class="btn btn-primary not-active">Male <input type="radio" value="male" name="gender"></label>
+                                            <label class="btn btn-primary not-active">Female <input type="radio" value="female" name="gender"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="Language">Language</label>
+                                <div >
+                                    <div class="input-group">
+                                        <div class="btn-group radio-group">
+                                            <label class="btn btn-primary not-active">English <input type="radio" value="english" name="language"></label>
+                                            <label class="btn btn-primary not-active">Urdu <input type="radio" value="urdu" name="language"></label>
+                                            <label class="btn btn-primary not-active">Chinese <input type="radio" value="chinese" name="language"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <input id="signup" type="submit" value="Register" class="btn btn-info btn-block">
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -120,3 +120,33 @@ Ali Shan CSS ends
 				Rashid CSS End
 	-----------------------------------------------------------
 */
+/*
+	-----------------------------------------------------------
+				saad CSS start
+	-----------------------------------------------------------
+*/
+
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+.radio-group label {
+	overflow: hidden;
+} .radio-group input {
+	  height: 1px;
+	  width: 1px;
+	  position: absolute;
+	  top: -10px;
+  } .radio-group .not-active  {
+		color: #3276b1;
+		background-color: #fff;
+	}
+/*
+	-----------------------------------------------------------
+				Saad CSS End
+	-----------------------------------------------------------
+*/
