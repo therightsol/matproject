@@ -19,92 +19,60 @@
         <?php include 'includes/banner.inc';?>
         <!--End Banner-->
 
-
-
-
-
         <!-- Sign In Form -->
-    <div class="container-fluid">
-        <div class="row ">
-             <div class="col-xs-offset-2 col-xs-4 col-md-3 notesign">
+    <div class="container" background="<?php echo $root."assets/";?>images/1.jpg">
 
-                <h1>Note</h1>
-                
-
-                     <p class="linote">
-                         Now over 3 million members
-                     </p>
-                     <p class="linote">
-                         high quality profiles and pictures
-                     </p>
-                     <p class="linote">
-                         ethical standards to ensure safety
-                     </p>
-                     <p class="linote">
-                         24/7 technical support for all members
-                     </p>
-                     <p class="linote">
-                         100% anonymity for ultimate security
-                     </p>
-                     <p class="linote">
-                         success stories from around the world
-
-                     </p>
-                     <p class="linote">
-                         Find Your Match
-
-                     </p>
-
-
-                </div>
-
-
-    <div class="col-xs-offset-1 col-xs-4 col-md-4 form_sign">
-
-
-
-
-            <form class="form-horizontal" style="margin-top:20px;" method="post" action="#">
-                <div class="form-group">
-                    <label for="Username" class="lable_form col-sm-3 control-label">User Name</label>
-                    <div class="col-xs-10 col-md-8">
-                        <input type="text" name="un" class="form-control" id="Username" placeholder="UserName">
-                        <span id="Error"></span>
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Don't Have Account..??<strong><a href="register">Create Now..</a></strong></h3>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="Password" class="lable_form col-sm-3 control-label">Password</label>
-                    <div class="col-xs-10 col-md-8">
-                        <input type="password" name="pass" class="form-control" id="Password" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <div class="checkbox">
+                    <div class="panel-body">
+                        <form id='loginform' action="<?php echo $root; ?>signin" method="post">
+
+                            <div class="form-group">
+
+                                <input type="text" name="un" id="username" class="form-control input-sm" placeholder="User Name">
+                                <?php if($_POST):
+                                    echo form_error('un', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
+                            </div>
+
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" name="pass" id="password" class="form-control input-sm" placeholder="Password">
+                                        <?php if($_POST):
+                                            echo form_error('pass', '<strong class="red">', '</strong>');
+                                        endif;
+                                        ?>
+                                    </div>
+                                </div>
+
+                            </div>
                             <label>
-                                <input type="checkbox"> Remember me
                                 <a class="a_forget" href="ResetPassword">Forget Password</a>
                             </label>
-                        </div>
-                    </div>
-                </div>
 
 
-                <div class="form-group">
-                    <div class="col-sm-offset-4 col-xs-10 col-md-4">
-                        <button type="submit" id="btn" class="btn-block btn-primary">Sign in</button>
+
+
+                                    <input id="signin" type="submit" value="Login" class="btn btn-info btn-block">
+
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-        </div>
-        </div>
-</div>
-<?php if(! empty($validation_errors)) : ?>
-    <div class="alert alert-danger">
-        <?php echo $validation_errors; ?>
     </div>
-<?php endif; ?>
+
 
     <!-- Start Footer Section -->
 <?php include 'includes/footer.inc';?>
