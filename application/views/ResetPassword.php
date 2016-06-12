@@ -27,66 +27,32 @@
 
 
     <!--  Reset Form -->
-        <div class="container-fluid">
-    <div class="row">
+    <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+    <div class="panel-body">
+<form id='loginform' action="<?php echo $root; ?>sigin" method="post">
 
-        <div class="col-sm-offset-3 col-sm-6 col-md-6">
+    <div class="form-group">
+        <div>
+            <h3 class="panel-title"> Enter the last password you remember</h3>
+        </div>
 
-
-            <form  style="margin-top:20px;" action="#" method="post">
-            <div class="col-sm-offset-3 col-sm-9">
-                <div  class="checkbox">
-
-                    <label>
-                        <input id="checkemail" name="reset" type="radio"> Via Email:
-                    </label>
-
-                    <br /><br />
-
-                    <div id="email1" class="form-group">
-                        <label for="email" class="lable_form col-sm-3 control-label">Email</label>
-                        <div class="col-sm-8">
-                            <input type="email" name="email" class="lable_form form-control" id="email" placeholder="Email">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div  class="checkbox">
-                    <label>
-                        <input id="phone" name="reset" type="radio"> Via Phone NO:
-
-                    </label>
-                    <br /><br />
-
-                    <div  id="phone" class="form-group row">
-
-                        <label for="1" class="lable_form col-sm-3 control-label">Phone No</label>
-
-                        <div  class=" col-sm-8">
-                            <input type="text" name="phone" class="form-control"  placeholder="+92">
-                        </div>
-
-                    </div>
-
-                    <div class="form-group" >
-                        <div class="col-sm-offset-3 col-sm-6">
-                            <button style="margin-bottom:30px;" type="submit" id="btn" class="btn-block btn-primary">Reset</button>
-                        </div>
-                    </div>
-
-                </div>
-            </form>
-
-            </div>
+        <input type="password" name="pass" id="password" class="form-control input-sm" placeholder="Password">
+        <?php if($_POST):
+            echo form_error('pass', '<strong class="red">', '</strong>');
+        endif;
+        ?>
+    </div>
+    <input href="#" id="next" type="submit" value="Next" class="btn btn-info btn-block">
+    </form>
+        <div>
+            <h3 class="panel-title"><strong><a href="via_email">Try a different question</a></strong></h3>
         </div>
     </div>
-</div>
-<?php if(! empty($validation_errors)) : ?>
-    <div class="alert alert-danger">
-        <?php echo $validation_errors; ?>
     </div>
-<?php endif; ?>
+    </div>
+    </div>
     <!--END  Reset Form -->
     <!-- Start Footer Section -->
 <?php include 'includes/footer.inc';?>

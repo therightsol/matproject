@@ -129,9 +129,12 @@
                             </div>
 
 
-                            <input id="signup" type="submit" value="Register" class="btn btn-info btn-block">
+                            <input id="signup" type="submit" value="Register" class="btn btn-success btn-block">
 
                         </form>
+                        <div>
+                            <h3 class="panel-title">Already a member..?<strong><a href="signin">Login Now..</a></strong></h3>
+                        </div>
                     </div>
                 </div>
             </div>
