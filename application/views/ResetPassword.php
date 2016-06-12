@@ -1,58 +1,64 @@
 <?php include 'includes/header.inc';?>
+<?php include 'includes/headerform.inc';?>
+<!-- Top menu -->
 
-    <!-- Full Body Container -->
-    <div id="container">
+<?php include 'includes/topbar.inc';?>
+<!-- Top content -->
+<div class="top-content">
 
-
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-        <?php include 'includes/topbar.inc';?>
-
-
-        <!-- Start  Logo & Naviagtion  -->
-        <?php include 'includes/navigation.inc';?>
-    </header>
-    <!-- End Header Section -->
-        <!-- Start Reset Banner -->
-        <div class="container-fluid">
+    <div class="inner-bg">
+        <div class="container">
             <div class="row">
-                <div class="banner" class="col-md-12 col-sm-12">
-                    <h1 class="sign">Reset Your Passward</h1>
+                <div class="col-sm-7 text">
+                    <h1><strong>Marriage Online</strong> Registration Form</h1>
+                    <div class="description">
+                        <h1>
+                            We can find <strong>Better</strong>
+                        </h1>
+                    </div>
+
+                </div>
+                <div class="col-sm-5 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <div >
+                                <h2 class="panel-title">Reset via Phone</h2>
+                            </div>
+                            <div >
+                                <small>Enter your valid Phone No.</small>
+                            </div>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" action="" method="post" class="registration-form">
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-Phone">Phone:</label>
+                                <?php if($_POST):
+                                    echo form_error('phone', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
+                                <input type="text" name="phone" placeholder="Phone..." class="form-Phone form-control" id="form-Phone">
+
+                            </div>
+
+
+
+
+                            <button type="submit" class="btn">Next</button>
+                            <p>Try another..<a href="via_email">option</a></p>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Reset Banner -->
+    </div>
 
+</div>
 
-    <!--  Reset Form -->
-    <div class="row centered-form">
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-    <div class="panel panel-default">
-    <div class="panel-body">
-<form id='loginform' action="<?php echo $root; ?>sigin" method="post">
-
-    <div class="form-group">
-        <div>
-            <h3 class="panel-title"> Enter the last password you remember</h3>
-        </div>
-
-        <input type="password" name="pass" id="password" class="form-control input-sm" placeholder="Password">
-        <?php if($_POST):
-            echo form_error('pass', '<strong class="red">', '</strong>');
-        endif;
-        ?>
-    </div>
-    <input href="#" id="next" type="submit" value="Next" class="btn btn-info btn-block">
-    </form>
-        <div>
-            <h3 class="panel-title"><strong><a href="via_email">Try a different question</a></strong></h3>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!--END  Reset Form -->
-    <!-- Start Footer Section -->
+<?php include 'includes/footerform.inc';?>
 <?php include 'includes/footer.inc';?>

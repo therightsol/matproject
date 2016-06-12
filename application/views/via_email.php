@@ -1,59 +1,66 @@
+
 <?php include 'includes/header.inc';?>
+<?php include 'includes/headerform.inc';?>
+<!-- Top menu -->
 
-    <!-- Full Body Container -->
-    <div id="container">
+<?php include 'includes/topbar.inc';?>
+<!-- Top content -->
+<div class="top-content">
 
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1><strong>Marriage Online</strong> Registration Form</h1>
+                    <div class="description">
+                        <h1>
+                            We can find <strong>Better</strong>
+                        </h1>
+                    </div>
 
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
+                </div>
+                <div class="col-sm-5 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <div >
+                                <h2 class="panel-title">Reset via E-mail</h2>
+                            </div>
+                            <div >
+                                <p>Enter your valid E-mail<br><small>Marriage Online will send your Reset password link to your email</small></p>
+                            </div>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" action="" method="post" class="registration-form">
 
-        <?php include 'includes/topbar.inc';?>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-email">E-mail:</label>
+                                <?php if($_POST):
+                                    echo form_error('email', '<strong class="red">', '</strong>');
+                                endif;
+                                ?>
+                                <input type="text" name="email" placeholder="E-mail..." class="form-email form-control" id="form-email">
 
-
-        <!-- Start  Logo & Naviagtion  -->
-        <?php include 'includes/navigation.inc';?>
-    </header>
-    <!-- End Header Section -->
-    <!-- Start Reset Banner -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="banner" class="col-md-12 col-sm-12">
-                <h1 class="sign">Reset Your Passward</h1>
-            </div>
-        </div>
-    </div>
-    <!-- End Reset Banner -->
-
-
-    <!--  Reset Form -->
-    <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form id='loginform' action="<?php echo $root; ?>signin" method="post">
-
-                        <div class="form-group">
-                            <div>
-                                <h2 class="panel-title">Recovery mail </h2>
-                                <small> Marriage Online will send reset password link to your email </small>
                             </div>
 
-                            <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email">
-                            <?php if($_POST):
-                                echo form_error('pass', '<strong class="red">', '</strong>');
-                            endif;
-                            ?>
-                        </div>
-                        <input href="#" id="next" type="submit" value="Next" class="btn btn-info btn-block">
-                    </form>
-                    <div>
-                        <h3 class="panel-title"><strong><a href="resetpassword">Try a different question</a></strong></h3>
+
+
+
+                            <button type="submit" class="btn">Next</button>
+                            <p>Try another..<a href="ResetPassword">option</a></p>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--END  Reset Form -->
-    <!-- Start Footer Section -->
+
+</div>
+
+<?php include 'includes/footerform.inc';?>
 <?php include 'includes/footer.inc';?>
+
