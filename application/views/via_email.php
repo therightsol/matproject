@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 text">
-                    <h1><strong>Marriage Online</strong> Registration Form</h1>
+                    <h1><strong class="clr">Marriage Online..</strong>Password Reset</h1>
                     <div class="description">
                         <h1>
                             We can find <strong>Better</strong>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
+                            <i class="fa fa-envelope"></i>
                         </div>
                     </div>
                     <div class="form-bottom">

@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 text">
-                    <h1><strong>Marriage Online</strong> Registration Form</h1>
+                    <h1><strong class="clr">Marriage Online..</strong>Log In</h1>
                     <div class="description">
                         <h1>
                             We can find <strong>Better</strong>

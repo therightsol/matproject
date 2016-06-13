@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 text">
-                    <h1><strong>Marriage Online</strong> Registration Form</h1>
+                    <h1><strong class="red">Marriage Online..</strong>Sign Up</h1>
                     <div class="description">
                         <h1>
                             We can find <strong>Better</strong>
@@ -85,8 +85,8 @@
                                 endif;
                                 ?>
                             </div>
-
-                            <button type="submit" class="btn">Sign up!</button>
+                            <input type="checkbox" name="terms" value="terms"  style="margin-top:7px;"/> <span>I have agreed to the <a>Terms & Condition</a> and <a>Security policy</a></span><br>
+                            <button type="submit" class="btn">Sign up!</button><br>
                             <a href="signin">Already a member??</a>
                         </form>
                         <div class="top-big-link">
