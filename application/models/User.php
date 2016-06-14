@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Users extends MY_Model {
+class User extends MY_Model {
 
     /**
      * Table Name and Primary key to perform CRUD operations.
@@ -10,22 +10,18 @@ class Users extends MY_Model {
     const DB_TablePK = 'uid';
     
     public $username = '';
-    public $firstname = '';
-    public $lastname = '';
-    
-    
+    public $firstName = '';
+    public $lastName = '';
     public $email = '';
+    public $joiningDate = '';
     public $password= '';
-    public $conpassword= '';
     public $phoneNumber= '';
     public $profilePhoto = '';
-    public $joiningDate = '';
     public $packageID = '';
-    public $userRole = '';
-    public $profilestauts = '';
+    public $profilestatus = '';
+    public $userrole = '';
     public $gender = '';
-    public $isemailvarified= '';
-    public $is_approved_by_admin= '';
+    public $isemailverified= '';
     public $isActive = '';
     public $isDeleted = '';
     public $DeletedBy = '';

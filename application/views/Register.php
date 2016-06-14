@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="Register" method="post" class="registration-form">
+                        <form role="form" action="<?php echo $root; ?>register" method="post" class="registration-form">
                             <div class="form-group">
                                 <label class="sr-only" for="form-first-name">First name</label>
                                 <input type="text" name="fname" placeholder="First name..." class="form-first-name form-control" id="form-first-name">

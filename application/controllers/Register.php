@@ -66,19 +66,47 @@ class Register extends CI_Controller {
             if(! $this->form_validation->run() == FALSE){
                 // When Success
 
+                /*
+                 * getting record from register form
+                 */
                 $fname      = $this->input->post('fname', True);
                 $lastname   = $this->input->post('lname', True);
                 $phone      = $this->input->post('phone', True);
                 $email      = $this->input->post('email', True);
                 $pass       = $this->input->post('pass', True);
-                $conpass    = $this->input->post('conpass', True);
                 $username   = $this->input->post('un', True);
 
+
+                /*
+                 * loading model(s)
+                 */
                 $this->load->model('user');
 
 
+                /*
+                 * saving record
+                 */
 
-                $name = $fname . ' ' . $lastname;
+                $this->load->model('user');
+                $this->user->firstName = $fname;
+                $this->user->lastName = $lastname;
+                $this->user->email = $email;
+                $this->user->username = $username;
+                $this->user->phoneNumber = $phone;
+                $this->user->password = $pass;
+
+
+
+
+
+                /*
+                 * sending email
+                 *
+                 */
+
+
+
+
 
 
 
