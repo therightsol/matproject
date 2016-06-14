@@ -127,7 +127,7 @@ class UserProfile extends CI_Controller {
 
         }
         else {
-            $this->load->view('UserProfile');
+            $this->load->view('UserProfile',$data);
         }
     }
 }
