@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class usermeta extends MY_Model {
+class UserMeta extends MY_Model {
 
     /**
      * Table Name and Primary key to perform CRUD operations.
@@ -10,6 +10,7 @@ class usermeta extends MY_Model {
     const DB_TablePK = 'umid';
 
     public $uid = '';
-    public $value = '';
     public $key= '';
+    public $value = '';
+
 } ?>

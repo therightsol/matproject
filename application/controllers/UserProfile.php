@@ -7,6 +7,7 @@ class UserProfile extends CI_Controller {
     {
         $data = array();
         $data['validation_errors'] = '';
+        $data['activepage'] = 'UserProfile';
 
         if(filter_input_array(INPUT_POST)){
 
@@ -16,9 +17,7 @@ class UserProfile extends CI_Controller {
 
             $config = array (
                 array(
-                    'field'     =>  'uid',
-                    'label'     =>  'User Id',
-                    'rules'     =>  'required'
+                    
                 ),
                 array(
                     'field'     =>  'dob',

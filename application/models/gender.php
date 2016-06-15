@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class gender extends MY_Model {
+class Gender extends MY_Model {
 
     /**
      * Table Name and Primary key to perform CRUD operations.
@@ -11,4 +11,6 @@ class gender extends MY_Model {
 
     public $title = '';
     public $key= '';
+    public $value= '';
+
 } ?>

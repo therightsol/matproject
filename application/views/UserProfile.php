@@ -1,175 +1,101 @@
 <?php include 'includes/header.inc';?>
-<?php include 'includes/headerform.inc';?>
+
 <!-- Top menu -->
 
 <?php include 'includes/topbar.inc';?>
+<?php include 'includes/navigation.inc';?>
+
+
 <!-- Top content -->
+<div class="title"><h1>UserProfile</h1></div>
+
+<div class="container_fluid">
+    <div class="row" style="background-color: white">
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7 text">
-                    <h1><strong class="red">Marriage Online..</strong>User Profile</h1>
-                    <div class="description">
-                        <h1>
-                            We can find <strong>Better</strong>
-                        </h1>
-                    </div>
-
+        <div class="stepwizard col-md-offset-3">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Step 1</p>
                 </div>
-                <div class="col-sm-8 col-sm-offset-3">
-                    <div class="form-top">
-                        <div class="form-top-left">
-                            <h3>User Profile</h3>
-
-                        </div>
-
-                 <form role="form" action="<?php echo $root; ?>UserProfile" method="post" >
-
-                                    <div style="border: 1px solid black; height: 180px;width:180px;margin-top: 70px;margin-left: 60px">
-
-                                    </div>
-                     <input type="file" name="cfile" style=";margin-top: 10px;margin-left: 70px">
-
-
-                                <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                                    <input type="text" name="dob"  id="dob" placeholder="01/12/1990" class="form-control inpute_profile"/>
-                                    <?php if($_POST):
-                                        echo form_error('dob', '<strong class="error">', '</strong>');
-                                    endif;
-                                    ?>
-                                </div>
-                                <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                                    <input type="text" name="religion"  id="rlgn" placeholder="Suni, Shia" class="form-control inpute_profile"/>
-                                    <?php if($_POST):
-                                        echo form_error('religion', '<strong class="red">', '</strong>');
-                                    endif;
-                                    ?>
-                                </div>
-
-
-                                    <div class="col-xs-12 col-sm-8 col-md-6 ">
-
-                                        <input type="text" name="intdi"  id="inti" placeholder="Interested In" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('intdi', '<strong class="error">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-                     <div class="col-xs-12 col-sm-8 col-md-6 ">
-
-                         <input type="text" name="sect" id="sect" placeholder="Sect" class="form-control inpute_profile"/>
-                         <?php if($_POST):
-                             echo form_error('sect', '<strong class="red">', '</strong>');
-                         endif;
-                         ?>
-                     </div>
-
-
-                                    <div class="col-xs-12 col-sm-8 col-md-6 ">
-
-                                        <input type="text" name="lng"  id="lng" placeholder="Languages" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('lng', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                                        <input type="text" name="mothertongue"  id="mtt" placeholder="Mother Tongue" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('mothertongue', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-
-
-
-
-
-                                    <div class="col-xs-12 col-sm-8 col-md-6 ">
-
-                                        <input type="text" name="lcountry"  id="lcountry" placeholder="Living Country" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('lcountry', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-8  col-md-6">
-
-                                        <input type="text"name="lcity"  id="lcity" placeholder="LivingIn City" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('lcity', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-
-
-
-                                    <div class="col-xs-12 col-sm-8 col-md-6 ">
-
-                                        <input type="text" name="bcountry"  id="bcountry" placeholder="Base Country" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('bcountry', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                                        <input type="text" name="bcity"  id="bcity" placeholder="Base City" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('bcity', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-
-
-                                    <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                                        <input type="text" name="profession"  id="profession" placeholder="Profession" class="form-control inpute_profile"/>
-                                        <?php if($_POST):
-                                            echo form_error('profession', '<strong class="red">', '</strong>');
-                                        endif;
-                                        ?>
-                                    </div>
-                     <div class="col-xs-12 col-sm-8  col-md-6 ">
-
-                         <Input class="form-control inpute_profile" type="text" name="interests"  rows="2" id="interest" placeholder="Interests">
-                         <?php if($_POST):
-                             echo form_error('profession', '<strong class="red">', '</strong>');
-                         endif;
-                         ?>
-                     </div>
-
-
-                              
-                                <div class="form-group col-xs-12 col-sm-8  col-md-12">
-
-                                    <input class="form-control inpute_profile" type="text" name="aboutme" rows="2" id="aboutme"  placeholder="About Me">
-                                    <?php if($_POST):
-                                        echo form_error('aboutme', '<strong class="red">', '</strong>');
-                                    endif;
-                                    ?>
-                                </div>
-                                <div class="col-md-offset-4 col-xs-10 col-sm-8  col-md-8">
-                                    <button type="submit" class="btn">Submite</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-
-
-                    </div>
-
+                <div class="stepwizard-step">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Step 2</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Step 3</p>
+                </div>
             </div>
         </div>
-    </div>
+    <form role="form" action="" method="post">
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-12 ">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3> Step 1</h3>
+                    <div class="form-group">
+                        <label class="control-label">Date Of Birth</label>
+                        <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Date of Birth"  />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Religion</label>
+                        <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter You Religion" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Interested In</label>
+                        <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Your Interested" />
+                    </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-12 ">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3> Step 2</h3>
+                    <div class="form-group">
+                        <label class="control-label">LiveIn Country</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Live_In Country" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">LiveIn City</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Live_In City"  />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">BaseIn Country</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Base_In Country"  />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">BaseIn City</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Base_In City"  />
 
+                    </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-3">
+            <div class="col-xs-12 col-md-offset-3">
+                <div class="col-md-6">
+                    <h3> Step 3</h3>
+
+                    <div class="form-group">
+                        <label class="control-label">Interests</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Interests"  />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">About Me</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your AboutMe"  />
+                    </div>
+
+                    <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    </div>
 </div>
 
-<?php include 'includes/footerform.inc';?>
 <?php include 'includes/footer.inc';?>

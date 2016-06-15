@@ -17,12 +17,19 @@
     <!-- Page Description and Author -->
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php $root = base_url(); ?>
 
     <!-- Bootstrap CSS  -->
+
     <link rel="stylesheet" href="<?php echo $root . "assets/"; ?>asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/tab.css"  media="screen" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/custom.css"  media="screen" />
+
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="<?php echo $root."assets/";?>css/font-awesome.min.css" type="text/css" media="screen">
@@ -55,8 +62,10 @@
 
 
     <!-- Margo JS  -->
-    <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-2.1.4.min.js"></script>
+
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/tab.js"></script>
+
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.migrate.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/modernizrr.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>asset/js/bootstrap.min.js"></script>

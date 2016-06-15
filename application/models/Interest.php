@@ -1,14 +1,15 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class countries extends MY_Model {
+class Interest extends MY_Model {
 
     /**
      * Table Name and Primary key to perform CRUD operations.
      */
-    const DB_TableName = 'countries';
-    const DB_TablePK = 'countryid';
+    const DB_TableName = 'interests';
+    const DB_TablePK = 'interestid';
 
     public $title = '';
     public $key= '';
+    public $value= '';
 } ?>
