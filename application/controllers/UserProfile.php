@@ -93,7 +93,7 @@ class UserProfile extends CI_Controller {
             if(! $this->form_validation->run() == FALSE){
                 // When Success
 
-                $uid     = $this->input->post('uid', True);
+                
                 $dob   = $this->input->post('dob', True);
                 $intdi      = $this->input->post('intdi', True);
                 $aboutme      = $this->input->post('aboutme', True);

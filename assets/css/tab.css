@@ -41,11 +41,47 @@
 	text-align: center;
 	padding: 6px 0;
 	font-size: 12px;
-	line-height: 1.428571429;
-	border-radius: 15px;
+	line-height: 1.428571429 !important;
+	border-radius: 15px !important;
 }
 .title{
 	height:100px;
 	width:100%;
 	background-color: #EAEAEA;
+
+
+}
+.form_profile{
+	margin-bottom: 100px;
+}
+.form_back{
+	background-color: #f0f0f0;
+
+
+}
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.profil_img{
+	height:150px;
+	width:150px;
+	border:1px solid black;
+}
+.title_h1{
+	padding-top: 30px;
+	margin-left: 80px;
 }

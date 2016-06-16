@@ -25,11 +25,13 @@
 
     <link rel="stylesheet" href="<?php echo $root . "assets/"; ?>asset/css/bootstrap.min.css" type="text/css" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/tab.css"  media="screen" />
+
+    <link rel="stylesheet" href="<?php echo $root . "assets/"; ?>css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/custom.css"  media="screen" />
 
+    <link rel="stylesheet" type="text/css" href="<?php echo $root."assets/";?>css/tab.css"  media="screen" />
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="<?php echo $root."assets/";?>css/font-awesome.min.css" type="text/css" media="screen">

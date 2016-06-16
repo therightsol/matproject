@@ -15,7 +15,7 @@ class Register extends CI_Controller {
 
 
         $data = array();
-        $data['validation_errors'] = '';
+        $data['validation_errors'] = ''; 
         $data['activepage'] = 'register';
         if(filter_input_array(INPUT_POST)){
 
