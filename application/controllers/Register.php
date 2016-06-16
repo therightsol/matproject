@@ -26,12 +26,12 @@ class Register extends CI_Controller {
                 array(
                     'field'     =>  'fname',
                     'label'     =>  'First Name',
-                    'rules'     =>  'required|min_length[3]|max_length[7]'
+                    'rules'     =>  'required|min_length[3]|max_length[100]'
                 ),
                 array(
                     'field'     =>  'lname',
                     'label'     =>  'Last Name',
-                    'rules'     =>  'required|min_length[3]|max_length[7]'
+                    'rules'     =>  'required|min_length[3]|max_length[100]'
                 ),
                 array(
                     'field'     =>  'un',
@@ -76,10 +76,20 @@ class Register extends CI_Controller {
                 $pass       = $this->input->post('pass', True);
                 $username   = $this->input->post('un', True);
 
+                $options = [
+                    'cost' => 10
+                ];
+                $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
 
-                /*
-                 * loading model(s)
-                 */
+
+                /*$md5pass = md5($pass);
+
+                $both = $hashedPassword . '<br />' . $md5pass;
+                exit($both);*/
+
+                    /*
+                     * loading model(s)
+                     */
                 $this->load->model('user');
 
 
@@ -87,15 +97,18 @@ class Register extends CI_Controller {
                  * saving record
                  */
 
-                $this->load->model('user');
                 $this->user->firstName = $fname;
                 $this->user->lastName = $lastname;
                 $this->user->email = $email;
                 $this->user->username = $username;
                 $this->user->phoneNumber = $phone;
-                $this->user->password = $pass;
+                $this->user->password = $hashedPassword;
 
 
+
+
+
+                $this->user->insertRecord();
 
 
 
@@ -103,6 +116,21 @@ class Register extends CI_Controller {
                  * sending email
                  *
                  */
+
+
+                $this->load->library('email');
+
+                $result = $this->email
+                    ->from('trsolutions.trainingcenter@gmail.com')
+                    ->reply_to('trsolutions.trainingcenter@gmail.com')    // Optional, an account where a human being reads.
+                    ->to($email)
+                    ->subject('Welcome to Matrimonial Service')
+                    ->message('<h1>Please verify you account.')
+                    ->send();
+
+                var_dump($result);
+                echo '<br />';
+                echo $this->email->print_debugger();
 
 
 
