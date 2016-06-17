@@ -108,6 +108,12 @@ class UserProfile extends CI_Controller {
                 $lng  = $this->input->post('lng', True);
                 $religion   = $this->input->post('religion', True);
 
+
+
+                var_export($_FILES);
+                echo '<hr />';
+                var_export($_POST);
+
      
             }else {
                 // when fails

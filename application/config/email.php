@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed.');
 
 $config['useragent']        = 'PHPMailer';              // Mail engine switcher: 'CodeIgniter' or 'PHPMailer'
-$config['protocol']         = 'mail';                   // 'mail', 'sendmail', or 'smtp'
+$config['protocol']         = 'smtp';                   // 'mail', 'sendmail', or 'smtp'
 $config['mailpath']         = '/usr/sbin/sendmail';
 $config['smtp_host']        = 'smtp.gmail.com';
 $config['smtp_user']        = 'trsolutions.trainingcenter@gmail.com';

@@ -120,7 +120,7 @@ class Register extends CI_Controller {
                     ->reply_to('trsolutions.trainingcenter@gmail.com')    // Optional, an account where a human being reads.
                     ->to($email)
                     ->subject('Welcome to Matrimonial Service')
-                    ->message('<h1>Please verify you account.')
+                    ->message('<h1>Please verify you account.</h1>')
                     ->send();
 
                 var_dump($result);
@@ -138,11 +138,12 @@ class Register extends CI_Controller {
             }else {
                 // when fails
 
+                echo validation_errors();exit;
                 $data['validation_errors'] = validation_errors();
 
                 $this->load->view('register', $data);
 
-                //echo validation_errors();
+
             }
 
 
