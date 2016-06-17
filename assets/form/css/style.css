@@ -77,41 +77,7 @@ img { max-width: 100%; }
 
 /***** Top menu *****/
 
-.navbar {
-	padding-top: 10px;
-	background: #333;
-	background: rgba(51, 51, 51, 0.3);
-	border: 0;
-	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-.navbar.navbar-no-bg { background: none; }
 
-ul.navbar-nav {
-	font-size: 16px;
-	color: #fff;
-}
-
-.navbar-inverse ul.navbar-nav li { padding-top: 8px; padding-bottom: 8px; }
-
-.navbar-inverse ul.navbar-nav li .li-text { opacity: 0.8; }
-
-.navbar-inverse ul.navbar-nav li a { display: inline; padding: 0; color: #fff; }
-.navbar-inverse ul.navbar-nav li a:hover { color: #fff; opacity: 1; border-bottom: 1px dotted #fff; }
-.navbar-inverse ul.navbar-nav li a:focus { color: #fff; outline: 0; opacity: 1; border-bottom: 1px dotted #fff; }
-
-.navbar-inverse ul.navbar-nav li .li-social a {
-	margin: 0 5px;
-	font-size: 28px;
-	vertical-align: middle;
-}
-.navbar-inverse ul.navbar-nav li .li-social a:hover,
-.navbar-inverse ul.navbar-nav li .li-social a:focus { border: 0; color: #19b9e7; }
-
-.navbar-brand {
-	width: 123px;
-	background: url(../img/logo.png) left center no-repeat;
-	text-indent: -99999px;
-}
 
 
 /***** Top content *****/
@@ -187,24 +153,7 @@ ul.navbar-nav {
 
 /***** Media queries *****/
 
-@media (min-width: 992px) and (max-width: 1199px) {}
 
-@media (min-width: 768px) and (max-width: 991px) {}
-
-@media (max-width: 767px) {
-
-	.navbar { padding-top: 0; }
-	.navbar.navbar-no-bg { background: #333; background: rgba(51, 51, 51, 0.9); }
-	.navbar-brand { height: 60px; margin-left: 15px; }
-	.navbar-collapse { border: 0; }
-	.navbar-toggle { margin-top: 12px; }
-
-	.inner-bg { padding: 60px 0 110px 0; }
-	.top-content .text { padding-top: 0; padding-bottom: 60px; }
-	.top-content .top-big-link { margin-top: 25px; }
-	.top-content .top-big-link a.btn { margin-top: 10px; }
-
-}
 
 @media (max-width: 415px) {
 
@@ -224,8 +173,4 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
 	/* logo */
-    .navbar-brand {
-    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
-    }
-
-}
+   

@@ -3,13 +3,15 @@
 <!-- Top menu -->
 
 <?php include 'includes/topbar.inc';?>
+
+<?php include 'includes/navigation.inc';?>
 <!-- Top content -->
 <div class="top-content">
     <div class="inner-bg">
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 text">
-                    <h1><strong class="red">Marriage Online..</strong>Sign Up</h1>
+                    <h1><strong class="animated2">Marriage Online..</strong>Sign Up</h1>
                     <div class="description">
                         <h1>
                             We can find <strong>Better</strong>
@@ -30,22 +32,6 @@
                     <div class="form-bottom">
                         <form role="form" action="<?php echo $root; ?>register" method="post" class="registration-form">
                             <div class="form-group">
-                                <label class="sr-only" for="form-first-name">First name</label>
-                                <input type="text" name="fname" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-                                <?php if($_POST):
-                                    echo form_error('fname', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="form-last-name">Last name:</label>
-                                <input type="text" name="lname" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-                                <?php if($_POST):
-                                    echo form_error('lname', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
-                            </div>
-                            <div class="form-group">
                                 <label class="sr-only" for="form-user-name">User name:</label>
                                 <input type="text" name="un" placeholder="User Name..." class="form-user-name form-control" id="form-user-name">
                                 <?php if($_POST):
@@ -58,14 +44,6 @@
                                 <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
                                 <?php if($_POST):
                                     echo form_error('email', '<strong class="red">', '</strong>');
-                                endif;
-                                ?>
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="form-phone">Mobile:</label>
-                                <input type="text" name="phone" placeholder="Mobile..." class="form-phone form-control" id="form-phone">
-                                <?php if($_POST):
-                                    echo form_error('phone', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
                             </div>
@@ -99,6 +77,7 @@
     </div>
 
 </div>
+<?php include 'includes/footer.inc';?>
 
 <?php include 'includes/footerform.inc';?>
-<?php include 'includes/footer.inc';?>
+

@@ -14,12 +14,8 @@
         <div class="navbar-collapse collapse">
             <!-- Stat Search -->
             <div class="search-side">
-                <a class="show-search"><i class="fa fa-search"></i></a>
-                <div class="search-form">
-                    <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                        <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                    </form>
-                </div>
+                <a class="show-search" href="<?php echo $root; ?>search"><i class="fa fa-search"></i></a>
+
             </div>
             <!-- End Search -->
             <!-- Start Navigation List -->
@@ -61,7 +57,7 @@
 
         </li>
         <li>
-            <a <?php if ($activepage == 'contact'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>Contact">Register</a>
+            <a <?php if ($activepage == 'contact'): ; ?> class="active" <?php endif; ?>href="<?php echo $root;?>Contact">Contact</a>
 
         </li>
         <li>

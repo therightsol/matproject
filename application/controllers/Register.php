@@ -69,9 +69,7 @@ class Register extends CI_Controller {
                 /*
                  * getting record from register form
                  */
-                $fname      = $this->input->post('fname', True);
-                $lastname   = $this->input->post('lname', True);
-                $phone      = $this->input->post('phone', True);
+
                 $email      = $this->input->post('email', True);
                 $pass       = $this->input->post('pass', True);
                 $username   = $this->input->post('un', True);
@@ -97,11 +95,8 @@ class Register extends CI_Controller {
                  * saving record
                  */
 
-                $this->user->firstName = $fname;
-                $this->user->lastName = $lastname;
                 $this->user->email = $email;
                 $this->user->username = $username;
-                $this->user->phoneNumber = $phone;
                 $this->user->password = $hashedPassword;
 
 

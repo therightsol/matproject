@@ -4,6 +4,7 @@
 <!-- Top menu -->
 
 <?php include 'includes/topbar.inc';?>
+<?php include 'includes/navigation.inc';?>
 <!-- Top content -->
 <div class="top-content">
 
@@ -11,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 text">
-                    <h1><strong class="clr">Marriage Online..</strong>Password Reset</h1>
+                    <h1><strong class="animated2">Marriage Online..</strong>Password Reset</h1>
                     <div class="description">
                         <h1>
                             We can find <strong>Better</strong>
@@ -34,7 +35,7 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="" method="post" class="registration-form">
+                        <form role="form" action="<?php echo $root; ?>via_email" method="post" class="registration-form">
 
                             <div class="form-group">
                                 <label class="sr-only" for="form-email">E-mail:</label>
@@ -60,7 +61,7 @@
     </div>
 
 </div>
-
-<?php include 'includes/footerform.inc';?>
 <?php include 'includes/footer.inc';?>
+<?php include 'includes/footerform.inc';?>
+
 

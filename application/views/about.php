@@ -177,5 +177,8 @@
 
                 <!-- Divider -->
                 <div class="hr1" style="margin-bottom:50px;"></div>
+                </div>
+            </div>
+        </div>
                 <?php include 'includes/footer.inc';?>
    
