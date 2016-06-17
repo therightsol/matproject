@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class UserRole extends MY_Model {
+class Userrole extends MY_Model {
 
 
 

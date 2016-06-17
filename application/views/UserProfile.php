@@ -33,18 +33,18 @@
                 </div>
             </div>
         </div>
-    <form role="form" action="<?php echo $root; ?>UserProfile" method="post" class="form_profile">
+    <form role="form" action="<?php echo $root; ?>UserProfile" method="post" enctype="multipart/form-data" class="form_profile">
         <div class="row setup-content" id="step-1">
             <div class="col-xs-8  col-sm-6 col-md-4 col-md-offset-4">
 
                     <h3> Step 1</h3>
                     <div class="col-md-offset-4">
-                    <div class="profil_img col-md-offset-0">
-
+                    <div class="profil_img col-md-offset-0" >
+                        <img id="blah" src="#" alt="your image" />
                     </div>
                     <div class="fileUpload btn btn-primary col-md-offset-1">
                         <span>Upload</span>
-                        <input type="file" class="upload" />
+                        <input type="file" onchange="readURL(this);" class="upload" />
                     </div>
                     </div>
                     <div class="form-group">

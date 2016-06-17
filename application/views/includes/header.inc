@@ -67,6 +67,11 @@
 
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/tab.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/img.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/img.jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-ui.min.js"></script>
+
+
 
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.migrate.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/modernizrr.js"></script>

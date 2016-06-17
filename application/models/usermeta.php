@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class UserMeta extends MY_Model {
+class Usermeta extends MY_Model {
 
     /**
      * Table Name and Primary key to perform CRUD operations.
