@@ -1,0 +1,1 @@
+<h2>Verify page</h2>

@@ -58,11 +58,15 @@ class Verify extends CI_Controller {
                        $db_userRecord = $this->user->getRecord($plain_username, 'username');
                         //echo '<tt><pre>' . var_export($db_userRecord,TRUE) . '</tt></pre>';
                         if ($db_userRecord != ''){
+                            $emailverify = 0;  // Default value
                          foreach($db_userRecord as $column => $value){
-                        if($column == 'is_email_verified')
-                            $emailverify = $value;
+                            if($column == 'isemailverified')
+                                $emailverify = $value;
                          }
                         if ($emailverify == 1){
+                            /*
+                             * display message that you token has been expired
+                             */
                             $data['email_alredy_verified'] = 'yes';
                             $this->load->view('verify', $data);
                         }
