@@ -43,6 +43,11 @@ class Register extends CI_Controller {
                     'label' => 'E-mail ',
                     'rules' => 'valid_email|required|max_length[255]'
                 ),
+                array(
+                    'field' => 'checkbox1',
+                    'label' => 'check box ',
+                    'rules' => 'required'
+                ),
 
 
             );

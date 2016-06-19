@@ -6,7 +6,7 @@ $(document).ready(function(){
 		$('#submit').click(function(e){
 			var is_validate=false;
 
-			if('#checkbox1' !=  'on' ){
+			if('#checkbox1' ==  '' && '#checkbox1' ==  null ){
 				$('#checkbox1_error').text('').css('color','red');
 				is_validate=true;
 			}

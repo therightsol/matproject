@@ -508,43 +508,9 @@ $(document).ready(function ($) {
 /*	Portfolio Isotope
 /*----------------------------------------------------*/
 
-jQuery(window).load(function(){
-	
-	var $container = $('#portfolio');
-	$container.isotope({
-		layoutMode : 'masonry',
-		filter: '*',
-		animationOptions: {
-			duration: 750,
-			easing: 'linear',
-			queue: false,
-		}
-	});
 
-	$('.portfolio-filter ul a').click(function(){
-		var selector = $(this).attr('data-filter');
-		$container.isotope({
-			filter: selector,
-			animationOptions: {
-				duration: 750,
-				easing: 'linear',
-				queue: false,
-			}
-		});
-	  return false;
-	});
-
-	var $optionSets = $('.portfolio-filter ul'),
-	    $optionLinks = $optionSets.find('a');
-	$optionLinks.click(function(){
-		var $this = $(this);
-		if ( $this.hasClass('selected') ) { return false; }
-		var $optionSet = $this.parents('.portfolio-filter ul');
-		$optionSet.find('.selected').removeClass('selected');
-		$this.addClass('selected'); 
-	});
 	
-});
+
 /* ----------------- End JS Document ----------------- */
 
 

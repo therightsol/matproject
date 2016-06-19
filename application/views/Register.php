@@ -26,7 +26,7 @@
                             <p class="free">Its free...</p>
                         </div>
                         <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
+                            <img src="<?php echo $root."assets/";?>images/mat12.png" alt="image"/>
                         </div>
                     </div>
                     <div class="form-bottom">
@@ -65,10 +65,15 @@
                                 endif;
                                 ?>
                             </div>
-                            <input type="checkbox" id="checkbox1" name="checkbox1" value="terms"  style="margin-top:7px;"/> <span>I have agreed to the <a>Terms & Condition</a> and <a>Security policy</a></span><br>
-                            <strong id="checkbox1_error"></strong>
 
-                            <button type="submit"  id="submit" class="btn">Sign up!</button><br>
+
+                            <input type="checkbox"   name="checkbox1" value="terms"  style="margin-top:7px;"/> <span>I have agreed to the <a>Terms & Condition</a> and <a>Security policy</a></span><br/>
+                            <?php if($_POST):
+                                echo form_error('checkbox1', '<strong class="red">', '</strong>');
+                            endif;
+                            ?>
+                            <br/>
+                            <button type="submit"   class="btn">Sign up!</button><br>
                             <a href="signin">Already a member??</a>
                         </form>
 
