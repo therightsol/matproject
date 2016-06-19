@@ -17,7 +17,7 @@
                     <h4>Follow Us<span class="head-line"></span></h4>
                     <ul class="social-icons">
                         <li>
-                            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                            <a class="facebook" href=" https://www.facebook.com/therightsol"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li>
                             <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -44,7 +44,7 @@
                             <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
                         </li>
                         <li>
-                            <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                            <a class="skype" href="vuprojects14"><i class="fa fa-skype"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -140,9 +140,9 @@
                     <h4><img src="<?php echo $root."assets/";?>images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     <ul>
-                        <li><span>Phone Number:</span> +01 234 567 890</li>
-                        <li><span>Email:</span> company@company.com</li>
-                        <li><span>Website:</span> www.yourdomain.com</li>
+                        <li><span>Phone Number:</span>+92 333 4036014</li>
+                        <li><span>Email:</span> info@therightsol.com</li>
+                        <li><span>Website:</span>http://www.therightsol.com/</li>
                     </ul>
                 </div>
             </div>
@@ -157,7 +157,7 @@
         <div class="copyright-section">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2014 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+                    <p>&copy; 2014 MARGO - ALL RIGHTS RESERVED GRAYGRIDS" with "Designed by  <a href="http://www.therightsol.com/">TheRightSol</a> </p>
                 </div>
                 <!-- .col-md-6 -->
                 <div class="col-md-6">

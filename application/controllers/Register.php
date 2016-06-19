@@ -13,153 +13,126 @@ class Register extends CI_Controller {
     {
 
 
-
         $data = array();
-        $data['validation_errors'] = ''; 
+        $data['validation_errors'] = '';
         $data['activepage'] = 'register';
-        if(filter_input_array(INPUT_POST)){
+        if (filter_input_array(INPUT_POST)) {
 
 
             $this->load->library('form_validation');
 
-            $config = array (
+            $config = array(
+
                 array(
-                    'field'     =>  'fname',
-                    'label'     =>  'First Name',
-                    'rules'     =>  'required|min_length[3]|max_length[100]'
+                    'field' => 'un',
+                    'label' => 'User Name',
+                    'rules' => 'required|alpha_numeric|max_length[255]'
                 ),
                 array(
-                    'field'     =>  'lname',
-                    'label'     =>  'Last Name',
-                    'rules'     =>  'required|min_length[3]|max_length[100]'
+                    'field' => 'pass',
+                    'label' => 'Password',
+                    'rules' => 'required|min_length[8]|max_length[255]|alpha_numeric'
                 ),
                 array(
-                    'field'     =>  'un',
-                    'label'     =>  'User Name',
-                    'rules'     =>  'required|alpha_numeric|max_length[9]'
+                    'field' => 'conpass',
+                    'label' => 'confirm password',
+                    'rules' => 'required|min_length[8]|max_length[255]|matches[pass]|alpha_numeric'
                 ),
                 array(
-                    'field'     =>  'pass',
-                    'label'     =>  'Password',
-                    'rules'     =>  'required|min_length[8]|max_length[16]|alpha_numeric'
+                    'field' => 'email',
+                    'label' => 'E-mail ',
+                    'rules' => 'valid_email|required|max_length[255]'
                 ),
-                array(
-                    'field'     =>  'conpass',
-                    'label'     =>  'confirm password',
-                    'rules'     =>  'required|min_length[8]|max_length[16]|matches[pass]|alpha_numeric'
-                ),
-                array(
-                    'field'     =>  'email',
-                    'label'     =>  'E-mail ',
-                    'rules'     =>  'valid_email|required'
-                ),
-                array(
-                    'field'     =>  'phone',
-                    'label'     =>  'Mobile No. ',
-                    'rules'     =>  'numeric|exact_length[13]|required'
-                ),
+
 
             );
 
-            $this->form_validation->set_rules($config);
-
-            if( $this->form_validation->run() == FALSE){
-                // When Success
-
-                /*
-                 * getting record from register form
-                 */
-
-                $email      = $this->input->post('email', True);
-                $pass       = $this->input->post('pass', True);
-                $username   = $this->input->post('un', True);
+                $this->form_validation->set_rules($config);
 
 
-                /*
-                 * loading model(s)
-                 */
-                $this->load->model('user');
-
-
-                $isUserFound = $this->user->getRecord($username, 'username');
-                $isEmailFound = $this->user->getRecord($email, 'email');
-
-                if(empty($isUserFound) && empty($isEmailFound)){
-                    // We can create user.
-                    $options = [
-                        'cost' => 10
-                    ];
-                    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
+                if (!$this->form_validation->run() == FALSE) {
+                    // When Success
 
                     /*
-                     * saving record
+                     * getting record from register form
                      */
 
-                    $this->user->email = $email;
-                    $this->user->username = $username;
-                    $this->user->password = $hashedPassword;
-
-
-                    $this->user->insertRecord();
-
+                    $email = $this->input->post('email', True);
+                    $pass = $this->input->post('pass', True);
+                    $username = $this->input->post('un', True);
 
 
                     /*
-                     * sending email
-                     *
+                     * loading model(s)
                      */
-                    $result = $this->send_email($username, $email);
+                    $this->load->model('user');
 
-                    if($result){
-                        // Show message.
-                        // Please verify your account
-                    }else {
-                        // show error.
-                        // Some internal error occured . Please contact to admin.
+
+                    $isUserFound = $this->user->getRecord($username, 'username');
+                    $isEmailFound = $this->user->getRecord($email, 'email');
+
+                    if (empty($isUserFound) && empty($isEmailFound)) {
+                        // We can create user.
+                        $options = [
+                            'cost' => 10
+                        ];
+                        $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
+
+                        /*
+                         * saving record
+                         */
+
+                        $this->user->email = $email;
+                        $this->user->username = $username;
+                        $this->user->password = $hashedPassword;
+
+
+                        $this->user->insertRecord();
+
+
+                        /*
+                         * sending email
+                         *
+                         */
+                        $result = $this->send_email($username, $email);
+
+                        if ($result) {
+                            // Show message.
+                            // Please verify your account
+                        } else {
+                            // show error.
+                            // Some internal error occured . Please contact to admin.
+                        }
+
+
+                    } else {
+                        // Show errors.
+
+                        // Username / email is already registered.
+                        echo 'UserName Or Password Already Exist';
                     }
 
 
+                } else {
+                    // when fails
 
 
 
+                    $data['validation_errors'] = validation_errors();
+
+                    $this->load->view('register', $data);
 
 
-
-
-
-
-
-
-
-                }else {
-                    // Show errors.
-
-                    // Username / email is already registered.
                 }
 
 
-
-
-            }else {
-                // when fails
-
-                echo validation_errors();exit;
-                $data['validation_errors'] = validation_errors();
-
-                $this->load->view('register', $data);
-
+            } else {
+                $this->load->view('Register', $data);
 
             }
 
-
-
-
-        }else{
-            $this->load->view('Register', $data);
-
         }
 
-    }
 
     public function checkusername(){
         // data base
@@ -223,4 +196,4 @@ class Register extends CI_Controller {
 
 
     }
-}
+ }

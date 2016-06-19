@@ -70,6 +70,9 @@
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/img.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/img.jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $root."assets/";?>js/form.js"></script>
 
 
 

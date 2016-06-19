@@ -5,11 +5,11 @@
             <div class="col-md-7">
                 <!-- Start Contact Info -->
                 <ul class="contact-details">
-                    <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
+                    <li><a href="#"><i class="fa fa-map-marker"></i>Lahore, Pakistan</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
+                    <li><a href="mailto:info@therightsol.com"><i class="fa fa-envelope-o"></i>info@therightsol.com</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
+                    <li><a href="#"><i class="fa fa-phone"></i> +92 333 4036014</a>
                     </li>
                 </ul>
                 <!-- End Contact Info -->

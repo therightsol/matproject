@@ -33,7 +33,7 @@
             </div>
             <!--/ Carousel item end -->
             <div class="item">
-                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
+                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg1.jpg" alt="slider">
                 <div class="slider-content">
                     <div class="col-md-12 text-center">
                         <h2 class="animated4">
