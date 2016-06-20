@@ -16,11 +16,11 @@ class Verify extends CI_Controller {
         $base_enc_username = $uid;
         $data['uid_empty'] = '';
         $data['user_notfound'] = '';
-        $data['email_verify'] = '';
+        $data['emailverify'] = '';
         $data['base_enc_username'] = '';
         $data['email_alredy_verified'] = '';
-        
-        
+
+        $url = base_url() . '/signin';
         
         if ($base_enc_username != '') {
             $enc_username = base64_decode($base_enc_username);
@@ -67,6 +67,7 @@ class Verify extends CI_Controller {
                             /*
                              * display message that you token has been expired
                              */
+
                             $data['email_alredy_verified'] = 'yes';
                             $this->load->view('verify', $data);
                         }
