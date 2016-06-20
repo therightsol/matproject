@@ -157,7 +157,7 @@
         <div class="copyright-section">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2014 MARGO - ALL RIGHTS RESERVED GRAYGRIDS" with "Designed by  <a href="http://www.therightsol.com/">TheRightSol</a> </p>
+                    <p>&copy; 2016 Online Marriage - ALL RIGHTS RESERVED GRAYGRIDS" with "Designed by <a href="http://www.therightsol.com/">TheRightSol</a> </p>
                 </div>
                 <!-- .col-md-6 -->
                 <div class="col-md-6">

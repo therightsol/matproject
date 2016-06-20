@@ -16,69 +16,8 @@
 
         <!-- Carousel inner -->
         <div class="carousel-inner">
+
             <div class="item active">
-                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
-                <div class="slider-content">
-                    <div class="col-md-12 text-center">
-                        <h2 class="animated2">
-                            <span>Welcome to <strong>Online Marriage</strong></span>
-                        </h2>
-                        <h3 class="animated3">
-                            <span>Find Your Perfect Match</span>
-                        </h3>
-                        <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Find Now</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!--/ Carousel item end -->
-            <div class="item">
-                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg1.jpg" alt="slider">
-                <div class="slider-content">
-                    <div class="col-md-12 text-center">
-                        <h2 class="animated4">
-                            <span><strong>Online Marriage</strong></span>
-                        </h2>
-                        <h3 class="animated5">
-                            <span>The Way of you To Your Partner</span>
-                        </h3>
-                        <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Register Now</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
-                <div class="slider-content">
-                    <div class="col-md-12 text-center">
-                        <h2 class="animated4">
-                            <span><strong>Online Marriage</strong></span>
-                        </h2>
-                        <h3 class="animated5">
-                            <span>The Way of you To Your Partner</span>
-                        </h3>
-                        <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Register Now</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
-                <div class="slider-content">
-                    <div class="col-md-12 text-center">
-                        <h2 class="animated4">
-                            <span><strong>Online Marriage</strong></span>
-                        </h2>
-                        <h3 class="animated5">
-                            <span>The Way of you To Your Partner</span>
-                        </h3>
-                        <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Register Now</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!--/ Carousel item end -->
-            <div class="item">
                 <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
                 <div class="slider-content">
                     <div class="col-md-12 text-center">
@@ -88,8 +27,71 @@
                         <h3 class="animated8 white">
                             <span>Why you are waiting</span>
                         </h3>
+
+                        <p class="animated4"><a href="<?php echo $root; ?>register" class="slider btn btn-system btn-large">Sign Up Now</a><a class="animated4 slider btn btn-default " href="<?php echo $root; ?>signin">Login Now</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Carousel item end -->
+            <div class="item">
+                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg.jpg" alt="slider">
+                <div class="slider-content">
+                    <div class="col-md-12 text-center">
+                        <h2 class="animated4">
+                            <span><strong>Online Marriage</strong></span>
+                        </h2>
+                        <h3 class="animated5">
+                            <span>Already a member...??</span>
+                        </h3>
+                        <p class="animated6"><a href="<?php echo $root; ?>signin" class="slider btn btn-system btn-large">Login Now</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg6.jpg" alt="slider">
+                <div class="slider-content">
+                    <div class="col-md-12 text-center">
+                        <h2 class="animated4">
+                            <span><strong>Online Marriage</strong></span>
+                        </h2>
+                        <h3 class="animated5">
+                            <span>Find Your Perfect Match</span>
+                        </h3>
+                        <p class="animated6"><a href="<?php echo $root; ?>search" class="slider btn btn-system btn-large">Find Now</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg7.jpg" alt="slider">
+                <div class="slider-content">
+                    <div class="col-md-12 text-center">
+                        <h2 class="animated4">
+                            <span><strong>Online Marriage</strong></span>
+                        </h2>
+                        <h3 class="animated5">
+                            <span>We are always Here for You</span>
+                        </h3>
+                        <p class="animated6"><a href="<?php echo $root; ?>contact" class="slider btn btn-system btn-large">Contact Us</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Carousel item end -->
+            <div class="item">
+                <img class="img-responsive" src="<?php echo $root."assets/";?>images/slider/bg4.jpg" alt="slider">
+                <div class="slider-content">
+                    <div class="col-md-12 text-center">
+                        <h2 class="animated4">
+                            <span><strong>Online Marriage</strong></span>
+                        </h2>
+                        <h3 class="animated8 white">
+                            <span>Join Us Now...<small>Its free</small></span>
+                        </h3>
                         <div class="">
-                            <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Register Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Login Now</a>
+                            <a class="animated4 slider btn btn-system btn-large btn-min-block" href="<?php echo $root; ?>register">Sign Up Now</a>
                         </div>
                     </div>
                 </div>

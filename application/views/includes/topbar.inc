@@ -19,7 +19,7 @@
                 <!-- Start Social Links -->
                 <ul class="social-list">
                     <li>
-                        <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                        <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href=" https://www.facebook.com/therightsol"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li>
                         <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -28,25 +28,17 @@
                         <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
                     </li>
                     <li>
-                        <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                    <li>
-                        <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                        <a class="dribbble itl-tooltip" data-placement="bottom" title="Website" href="http://www.therightsol.com/"><i class="fa fa-dribbble"></i></a>
                     </li>
                     <li>
                         <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
                     </li>
                     <li>
-                        <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                    </li>
-                    <li>
                         <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
                     </li>
+
                     <li>
-                        <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                    </li>
-                    <li>
-                        <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                        <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="https://www.skype.com/vuprojects14"><i class="fa fa-skype"></i></a>
                     </li>
                 </ul>
                 <!-- End Social Links -->
