@@ -107,6 +107,12 @@ class Register extends CI_Controller {
                     $result = $this->send_email($username, $email);
 
                     if ($result) {
+                        if(isset($_POST['butn'])){
+                            $data['success_massage'] = 'Registered!';
+                            $this->load->view('register', $data);
+                        }
+                        //echo $result;
+
                         // Show message.
                         // Please verify your account.
 
@@ -123,7 +129,7 @@ class Register extends CI_Controller {
 
                     // Username / email is already registered.
 
-                    $data['message_display'] = 'Sorry !Provided Username or Email is not Aavailable ';
+                    $data['message_display'] = 'Sorry! Provided Username or Email is not Aavailable ';
                     $this->load->view('register', $data);
 
 
