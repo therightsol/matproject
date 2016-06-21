@@ -16,6 +16,8 @@ class Register extends CI_Controller {
         $data = array();
         $data['validation_errors'] = '';
         $data['activepage'] = 'register';
+
+
         if (filter_input_array(INPUT_POST)) {
 
 
@@ -52,91 +54,99 @@ class Register extends CI_Controller {
 
             );
 
-                $this->form_validation->set_rules($config);
 
 
-                if (!$this->form_validation->run() == FALSE) {
-                    // When Success
+
+            $this->form_validation->set_rules($config);
+
+
+            if (!$this->form_validation->run() == FALSE) {
+                // When Success
+
+                /*
+                 * getting record from register form
+                 */
+
+                $email = $this->input->post('email', True);
+                $pass = $this->input->post('pass', True);
+                $username = $this->input->post('un', True);
+
+
+                /*
+                 * loading model(s)
+                 */
+                $this->load->model('user');
+
+
+                $isUserFound = $this->user->getRecord($username, 'username');
+                $isEmailFound = $this->user->getRecord($email, 'email');
+
+                if (empty($isUserFound) && empty($isEmailFound)) {
+                    // We can create user.
+                    $options = [
+                        'cost' => 10
+                    ];
+                    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
 
                     /*
-                     * getting record from register form
+                     * saving record
                      */
 
-                    $email = $this->input->post('email', True);
-                    $pass = $this->input->post('pass', True);
-                    $username = $this->input->post('un', True);
+                    $this->user->email = $email;
+                    $this->user->username = $username;
+                    $this->user->password = $hashedPassword;
+
+
+                    $this->user->insertRecord();
 
 
                     /*
-                     * loading model(s)
+                     * sending email
+                     *
                      */
-                    $this->load->model('user');
+                    $result = $this->send_email($username, $email);
 
-
-                    $isUserFound = $this->user->getRecord($username, 'username');
-                    $isEmailFound = $this->user->getRecord($email, 'email');
-
-                    if (empty($isUserFound) && empty($isEmailFound)) {
-                        // We can create user.
-                        $options = [
-                            'cost' => 10
-                        ];
-                        $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
-
-                        /*
-                         * saving record
-                         */
-
-                        $this->user->email = $email;
-                        $this->user->username = $username;
-                        $this->user->password = $hashedPassword;
-
-
-                        $this->user->insertRecord();
-
-
-                        /*
-                         * sending email
-                         *
-                         */
-                        $result = $this->send_email($username, $email);
-
-                        if ($result) {
-                            // Show message.
-                            // Please verify your account
-                        } else {
-                            // show error.
-                            // Some internal error occured . Please contact to admin.
-                        }
-
+                    if ($result) {
+                        // Show message.
+                        // Please verify your account.
 
                     } else {
-                        // Show errors.
+                        // show error.
+                        // Some internal error occured . Please contact to admin.
 
-                        // Username / email is already registered.
-                        echo 'UserName Or Password Already Exist';
+
                     }
 
 
                 } else {
-                    // when fails
+                    // Show errors.
 
+                    // Username / email is already registered.
 
-
-                    $data['validation_errors'] = validation_errors();
-
+                    $data['message_display'] = 'Sorry !Provided Username or Email is not Aavailable ';
                     $this->load->view('register', $data);
+
 
 
                 }
 
 
             } else {
-                $this->load->view('Register', $data);
+                // when fails
+                $data['validation_errors'] = validation_errors();
+
+                $this->load->view('register', $data);
+
 
             }
 
+
+        } else {
+            $this->load->view('register', $data);
+
         }
+
+    }
 
 
     public function checkusername(){
@@ -201,4 +211,4 @@ class Register extends CI_Controller {
 
 
     }
- }
+}
