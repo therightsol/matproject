@@ -13,9 +13,15 @@ class Register extends CI_Controller {
     {
 
 
+        $this->load
+            ->model('user');
+        $a = $this->user->getRecord('alishanvr@gmail.com','email');
+        var_export($a->username);
+
         $data = array();
         $data['validation_errors'] = '';
         $data['activepage'] = 'register';
+        $data['registerOK'] = '';
 
 
         if (filter_input_array(INPUT_POST)) {
@@ -107,15 +113,8 @@ class Register extends CI_Controller {
                     $result = $this->send_email($username, $email);
 
                     if ($result) {
-                        if(isset($_POST['butn'])){
-                            $data['success_massage'] = 'Registered!';
-                            $this->load->view('register', $data);
-                        }
-                        //echo $result;
-
-                        // Show message.
-                        // Please verify your account.
-
+                        $data['registerOK'] = 'yes';
+                        $this->load->view('register', $data);
                     } else {
                         // show error.
                         // Some internal error occured . Please contact to admin.

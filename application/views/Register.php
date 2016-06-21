@@ -29,6 +29,9 @@
                             <img src="<?php echo $root."assets/";?>images/mat12.png" alt="image"/>
                         </div>
                     </div>
+
+                    <?php if($registerOK != 'yes') : ?>
+
                     <div class="form-bottom">
                         <form role="form" action="<?php echo $root; ?>register" method="post" class="registration-form">
                             <div class="form-group">
@@ -88,6 +91,13 @@
 
                         </div>
                     </div>
+
+                    <?php else: ?>
+                        <div class="alert alert-success">
+                            You are successfully registered. <br />
+                            Please check your inbox for verification Email.
+                        </div>
+                    <?php endif; // RegisterOK ?>
 
                 </div>
             </div>
