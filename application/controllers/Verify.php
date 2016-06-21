@@ -45,7 +45,8 @@ class Verify extends CI_Controller {
                 if (!empty($db_all_usernames)) {
                     // update
                     $updateData = array(
-                        'isemailverified' => 1
+                        'isemailverified' => 1,
+                        'isActive' => 1,
                     );
 
                     $isSuccess = $this->user->updateRecord('username', $updateData, $plain_username);
