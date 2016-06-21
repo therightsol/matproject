@@ -19,12 +19,7 @@ class ResetPassword extends CI_Controller {
                 array(
                     'field'     =>  'phone',
                     'label'     =>  'Mobile No.',
-                    'rules'     =>  'required|exact_length[3]'
-                ),
-                array(
-                    'field'     =>  'email',
-                    'label'     =>  'Email',
-                    'rules'     =>  'required|valid_email'
+                    'rules'     =>  'required|min_length[3]'
                 ),
 
             );
@@ -36,13 +31,12 @@ class ResetPassword extends CI_Controller {
 
 
                 $phone      = $this->input->post('phone', True);
-                $email      = $this->input->post('email', True);
 
                 $this->load->model('user');
 
 
 
-                $name = $phone . ' ' . $email;
+                $name = $phone;
 
 
 

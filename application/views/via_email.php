@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label class="sr-only" for="form-email">E-mail:</label>
                                 <?php if($_POST):
-                                    echo form_error('email', '<strong class="red">', '</strong>');
+                                    echo form_error('email','<strong class="red">', '</strong>');
                                 endif;
                                 ?>
                                 <input type="text" name="email" placeholder="E-mail..." class="form-email form-control" id="form-email">

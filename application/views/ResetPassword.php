@@ -48,9 +48,7 @@
                             </div>
 
 
-
-
-                            <button type="submit" class="btn">Next</button>
+                          <button type="submit" class="btn">Next</button>
                             <p>Try another..<a href="via_email">option</a></p>
                         </form>
 
