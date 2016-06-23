@@ -38,7 +38,7 @@
                                     echo form_error('un', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
-                                <input type="text" name="un" placeholder="User Name..." class="form-user-name form-control" id="form-user-name">
+                                <input type="text"  value="<?php if($_POST) echo $_POST['un']; ?>" name="un" placeholder="User Name..." class="form-user-name form-control" id="form-user-name">
 
                                 <input type="checkbox" name="rememberme" value="Remember me">Remember me
 
@@ -49,7 +49,7 @@
                                     echo form_error('pass', '<strong class="red">', '</strong>');
                                 endif;
                                 ?>
-                                <input type="password" name="pass" placeholder="Password..." class="form-password form-control" id="form-password">
+                                <input type="password"  value="<?php if($_POST) echo $_POST['pass']; ?>" name="pass" placeholder="Password..." class="form-password form-control" id="form-password">
 
                                 <a href="ResetPassword">Need help?</a>
 

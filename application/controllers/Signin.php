@@ -19,12 +19,12 @@ class Signin extends CI_Controller {
                 array(
                     'field'     =>  'un',
                     'label'     =>  'Username',
-                    'rules'     =>  'required|'
+                    'rules'     =>  'required|trim'
                 ),
                 array(
                     'field'     =>  'pass',
                     'label'     =>  'Password',
-                    'rules'     =>  'required|'
+                    'rules'     =>  'required|trim'
                 ),
 
             );
@@ -51,7 +51,7 @@ class Signin extends CI_Controller {
                                 /*
                                  * Do not change this code -- Class Code - Under Development
                                  */
-                    $rec = array('username' => $username, 'is_member' => 1);
+                    $rec = array('username' => $username,);
                     $db_record = $this->user->getSpecificColumnRec(false, $rec);
                     echo '<pre>'.var_export($db_record, true).'</pre>';exit;
                     // checking is email found or not and user is active.
@@ -95,9 +95,8 @@ class Signin extends CI_Controller {
 
                             if ($db_record[0]['is_admin'] == 1) {
                                 $loggedInUser = 'admin';
-                            } elseif ($db_record[0]['is_member'] == 1) {
-                                $loggedInUser = 'is_member';
-                            } elseif ($db_record[0]['is_organization'] == 1) {
+                            }
+                           elseif ($db_record[0]['is_organization'] == 1) {
                                 $loggedInUser = 'is_organization';
                             }
 

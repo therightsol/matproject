@@ -80,7 +80,7 @@
                             </div>
 
 
-                            <input type="checkbox"   name="checkbox1" value="terms"  style="margin-top:7px;"/> <span>I have agreed to the <a>Terms & Condition</a> and <a>Security policy</a></span><br/>
+                            <input type="checkbox" value="checkbox1"  name="checkbox1"  style="margin-top:7px;"/> <span>I have agreed to the <a>Terms & Condition</a> and <a>Security policy</a></span><br/>
                             <?php if($_POST):
                                 echo form_error('checkbox1', '<strong class="red">', '</strong>');
                             endif;
