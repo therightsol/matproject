@@ -1,16 +1,16 @@
 <?php include 'includes/header.inc';?>
 <?php include 'includes/headerform.inc';?>
-    <!-- Top menu -->
+<!-- Top menu -->
 
 <?php include 'includes/topbar.inc';?>
 
 <?php include 'includes/navigation.inc';?>
-    <!-- Top content -->
+<!-- Top content -->
 <div class="top-content">
     <div class="inner-bg">
         <div id="container">
             <div class="form-bottom">
-                <form role="form" action="<?php echo $root; ?>register" method="post" class="registration-form">
+                <form role="form" action="<?php echo $root; ?>change/pass" method="post" class="registration-form">
 
                     <div class="form-group">
                         <label class="sr-only" for="form-password">Password:</label>
@@ -32,8 +32,8 @@
 
 
                     <br/>
-                    <button name="butn" type="submit"   class="btn" onclick="return true;">Sign up!</button><br>
-                    <a href="signin">Already a member??</a>
+                    <button name="butn" type="submit"   class="btn" onclick="return true;">Submit!</button><br>
+
 
                 </form>
 
@@ -41,16 +41,7 @@
 
                 </div>
             </div>
-        <?php 
-        if(!$email_alredy_verified): 
-            echo"<h1>Congratulations!</h1><br><h2>Your email has been verified. Now you can login by clicking the link below.</h2><br><h2> <a href='#'>Login!</a></h2>";
-            endif;
-        ?>
-        <?php
-        if($email_alredy_verified):
-            echo"<h1>Sorry!</h1><br><h2>Your token has been expired!</h2>";
-            endif;
-        ?>
+
         </div>
     </div>
 </div>

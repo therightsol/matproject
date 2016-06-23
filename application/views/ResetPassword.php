@@ -49,7 +49,7 @@
 
 
                           <button type="submit" class="btn">Next</button>
-                            <p>Try another..<a href="via_email">option</a></p>
+                            <p>Try another..<a href="via_email">Email</a></p>
                         </form>
 
                     </div>

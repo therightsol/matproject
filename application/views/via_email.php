@@ -34,10 +34,18 @@
                             <i class="fa fa-envelope"></i>
                         </div>
                     </div>
+                    <?php if($resetOK != 'yes') : ?>
+
                     <div class="form-bottom">
                         <form role="form" action="<?php echo $root; ?>via_email" method="post" class="registration-form">
 
                             <div class="form-group">
+                                <strong class="red">
+                                    <?php  if (isset($message_display)) {
+                                        echo $message_display;
+                                    }
+                                    ?>
+                                </strong>
                                 <label class="sr-only" for="form-email">E-mail:</label>
                                 <?php if($_POST):
                                     echo form_error('email','<strong class="red">', '</strong>');
@@ -55,6 +63,12 @@
                         </form>
 
                     </div>
+                    <?php else: ?>
+                        <div class="alert alert-success">
+                            You are successfully reset password. <br />
+                            Please check your inbox for change password.
+                        </div>
+                    <?php endif; // RegisterOK ?>
                 </div>
             </div>
         </div>

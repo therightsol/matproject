@@ -13,10 +13,10 @@ class Register extends CI_Controller {
     {
 
 
-        $this->load
-            ->model('user');
-        $a = $this->user->getRecord('alishanvr@gmail.com','email');
-        var_export($a->username);
+//        $this->load
+//            ->model('user');
+//        $a = $this->user->getRecord('alishanvr@gmail.com','email');
+//        var_export($a->username);
 
         $data = array();
         $data['validation_errors'] = '';

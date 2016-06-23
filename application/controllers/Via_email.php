@@ -5,8 +5,12 @@ class Via_email extends CI_Controller {
 
     public function index()
     {
+        $data = array();
         $data['activepage'] = 'via_email';
         $data['validation_errors'] = '';
+        $data['resetOK'] = '';
+
+
         if(filter_input_array(INPUT_POST)){
 
 
@@ -30,7 +34,8 @@ class Via_email extends CI_Controller {
                 $email = $this->input->post('email', True);
 
                 $this->load->model('user');
-
+//                $a = $this->user->getRecord($email,'email');
+//                var_export($a->email);
 
 
                 $isEmailFound = $this->user->getRecord($email, 'email');
@@ -50,7 +55,7 @@ class Via_email extends CI_Controller {
                      */
 
                     $this->user->email = $email;
-                   echo 'Email is already registered ';
+//                    echo 'Email is already registered ';
 
 //                    $this->user->username = $username;
 //                    $this->user->password = $hashedPassword;
@@ -67,7 +72,9 @@ class Via_email extends CI_Controller {
 
                     if ($result) {
                         // Show message.
-                        echo 'successfuly send your email';
+                        $data['resetOK'] = 'yes';
+                        $this->load->view('via_email', $data);
+//                        echo 'successfuly send your email';
                         // Please verify your account
 
                     } else {
@@ -80,9 +87,11 @@ class Via_email extends CI_Controller {
 
                 } else {
                     // Show errors.
+                    $data['message_display'] = 'Sorry! Provided Email is not Aavailable ';
+                    $this->load->view('via_email', $data);
 
                     // Username / email is already registered.
-                    echo 'Email is not Registered, Please sign up ur account';
+//                    echo 'Email is not Registered, Please sign up ur account';
                 }
 
             }
@@ -135,10 +144,10 @@ class Via_email extends CI_Controller {
         $base64email = base64_encode($encrypteEmail);   // changing username to base64 algo.
         //echo $base64userName; exit();
 
-        $url = base_url() . 'change/' . $base64email;
+        $url = base_url() . 'change/pass/' . $base64email;
 
         $message = '<strong> Welcome! </strong><br /><br />'
-            . 'You are successfully registered. Please verify your account by clicking on below url. <br />'
+            . 'Reset your password. Please reset your password by clicking on below url. <br />'
             . $url . '<br /><br /><br /><br /><br /><br /><br /><hr />'
             . '<strong> Team MatProject</strong><br /><br />';
 
@@ -148,7 +157,7 @@ class Via_email extends CI_Controller {
             ->from('trsolutions.trainingcenter@gmail.com')
             ->reply_to('trsolutions.trainingcenter@gmail.com')    // Optional, an account where a human being reads.
             ->to($email)
-            ->subject('Welcome to Matrimonial Service')
+            ->subject('Reset Your Password')
             ->message($message)
             ->send();
 
