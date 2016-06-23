@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: FURQAN AFZAL
+ * Date: 6/4/2016
+ * Time: 12:00 AM
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Change extends CI_Controller {
@@ -9,120 +14,179 @@ class Change extends CI_Controller {
 
     }
 
-    public function pass($uid = '') {
 
-        $data['activepage'] = 'verify';
+    public function pass($uid = '')
+    {
 
+
+        $data = array();
+        $data['validation_errors'] = '';
+        $data['activepage'] = 'changepass';
+        $data['message_display']='';
         $base_enc_username = $uid;
         $data['uid_empty'] = '';
         $data['user_notfound'] = '';
-        $data['emailverify'] = '';
         $data['base_enc_username'] = '';
-        $data['email_alredy_verified'] = '';
         $data['uid'] = $uid;
+        $data['resetOK']= '';
+
+        if (filter_input_array(INPUT_POST)) {
 
 
-        if(filter_input_array(INPUT_POST)){
-            // User submitted his new password
+            $this->load->library('form_validation');
+
+            $config = array(
+
+                array(
+                    'field' => 'pass',
+                    'label' => 'Password',
+                    'rules' => 'required|min_length[8]|max_length[255]|alpha_numeric'
+                ),
+                array(
+                    'field' => 'conpass',
+                    'label' => 'confirm password',
+                    'rules' => 'required|min_length[8]|max_length[255]|matches[pass]|alpha_numeric'
+                )
+
+            );
 
 
-            // STEPS 1:     validate form (Password)
-
-            // Step 2:      if validate, hashed password with same techniques as time of registeration,
-
-            // Step 3:      send email that password has been updated.
-
-            // Step 4:      load view
 
 
-
-        }else {
-            // Display Form
-
-            $this->load->view->('changepass', $data);
-        }
+            $this->form_validation->set_rules($config);
 
 
-        $url = base_url() . '/signin';
+            if (!$this->form_validation->run() == FALSE) {
+                // When Success
 
-        if ($base_enc_username != '') {
-            $enc_username = base64_decode($base_enc_username);
+                /*
+                 * getting record from register form
+                 */
 
-
-            $this->load->library('encrypt');
-            $this->load->model('basic_functions');
-            $key = $this->basic_functions->getEncryptionKey();
-
-            $plain_username = $this->encrypt->decode($enc_username, $key);
-
-            //echo $plain_username;
-            // updateRecord($columnName = 'customerID', $data='' , $update_where='', $nameOfUpdatingColumn=False)
-            $this->load->model('user');
-
-            if ($plain_username != "") {
-                $db_all_usernames = $this->user->getRecord($plain_username, 'username');
-
-                //echo var_export($db_all_usernames);
+                $email = $this->input->post('email', True);
+                $pass = $this->input->post('pass', True);
 
 
-                if (!empty($db_all_usernames)) {
-                    // update
-                    $updateData = array(
-                        'isemailverified' => 1,
-                        'isActive' => 1
+                /*
+                 * loading model(s)
+                 */
+                $this->load->model('user');
 
-                    );
 
-                    $isSuccess = $this->user->updateRecord('email', $updateData, $plain_username);
+                $isEmailFound = $this->user->getRecord($email, 'email');
 
-                    if ($isSuccess) {
-                        $data['email_verify'] = 'yes';
+                if (! empty($isEmailFound)) {
+                    // We can create user.
+                    $options = [
+                        'cost' => 10
+                    ];
+                    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
+
+                    /*
+                     * saving record
+                     */
+
+                    $this->user->email = $email;
+                    $this->user->password = $hashedPassword;
+
+
+                    $this->user->updaterecord();
+
+
+                    /*
+                     * sending email
+                     *
+                     */
+                    $result = $this->send_email( $email);
+
+                    if ($result) {
+                        $data['resetOK'] = 'yes';
                         $this->load->view('changepass', $data);
+                    } else {
+                        // show error.
+                        // Some internal error occured . Please contact to admin.
 
-                    }else{
-                        $db_userRecord = $this->user->getRecord($plain_username, 'email');
-                        //echo '<tt><pre>' . var_export($db_userRecord,TRUE) . '</tt></pre>';
-                        if ($db_userRecord != ''){
-                            $emailverify = 0;  // Default value
-                            foreach($db_userRecord as $column => $value){
-                                if($column == 'isemailverified')
-                                    $emailverify = $value;
-                            }
-                            if ($emailverify == 1){
-                                /*
-                                 * display message that you token has been expired
-                                 */
 
-                                $data['email_alredy_verified'] = 'yes';
-                                $this->load->view('changepass', $data);
-                            }
-                        }
-                        // some DB related issue. Every thing is fine but DB related error.
                     }
 
+
                 } else {
-                    // user not found
-                    //echo "user not found";
-                    //echo $username;
-                    $data['user_notfound'] = 'yes';
+                    // Show errors.
+
+                    // Username / email is already registered.
+
+                    $data['message_display'] = 'Sorry! Provided Username or Email is not Aavailable ';
                     $this->load->view('changepass', $data);
+
+
+
                 }
+
+
             } else {
-                // user not found because this is blank username
-                // echo " user is blank";
-                $data['uid_empty'] = 'yes';
+                // when fails
+                $data['validation_errors'] = validation_errors();
+
                 $this->load->view('changepass', $data);
+
+
             }
+
+
         } else {
-            // uid is empty. uid is changed
-            $data['base_enc_email'] = 'yes';
             $this->load->view('changepass', $data);
-            // echo "Email not verified because of some internal error. ERROR #1001";
+
         }
 
     }
 
 
 
+    /*
+     * Sends Verifications Emails
+     */
+    private function send_email($username, $userEmail){
+        /*
+         * Send Email is Pending
+         *  i)  Confirmation of email account.
+         *  ii) if email is confirmed by user by clicking on confirmation link then,
+         *          -->     send email to Admin that a new user has been created. And set privilages for this user.
+         */
 
+        // Loading encryption library to encrypt username
+        $this->load->library('encrypt');
+
+        $this->load->model('basic_functions');
+        $encryptionKey = $this->basic_functions->getEncryptionKey();
+        //exit($encryptionKey);
+
+        $encrypteUserName = $this->encrypt->encode($username, $encryptionKey);
+        //echo($encrypteUserName) . '<br /><br />';
+
+
+        $base64userName = base64_encode($encrypteUserName);   // changing username to base64 algo.
+        //echo $base64userName; exit();
+
+        $url = base_url() . 'change/pass/' . $base64userName;
+
+        $message = '<strong> Welcome! ' . $username . ' </strong><br /><br />'
+            . 'You are successfully updated. Please login. <br />'
+            . $url . '<br /><br /><br /><br /><br /><br /><br /><hr />'
+            . '<strong> Team MatProject</strong><br /><br />';
+
+        $this->load->library('email');
+
+        $result = $this->email
+            ->from('trsolutions.trainingcenter@gmail.com')
+            ->reply_to('trsolutions.trainingcenter@gmail.com')    // Optional, an account where a human being reads.
+            ->to($userEmail)
+            ->subject('successfully updated password')
+            ->message($message)
+            ->send();
+
+        return $result;
+
+
+
+    }
 }
