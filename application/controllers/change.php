@@ -19,6 +19,29 @@ class Change extends CI_Controller {
         $data['emailverify'] = '';
         $data['base_enc_username'] = '';
         $data['email_alredy_verified'] = '';
+        $data['uid'] = $uid;
+
+
+        if(filter_input_array(INPUT_POST)){
+            // User submitted his new password
+
+
+            // STEPS 1:     validate form (Password)
+
+            // Step 2:      if validate, hashed password with same techniques as time of registeration,
+
+            // Step 3:      send email that password has been updated.
+
+            // Step 4:      load view
+
+
+
+        }else {
+            // Display Form
+
+            $this->load->view->('changepass', $data);
+        }
+
 
         $url = base_url() . '/signin';
 
@@ -46,8 +69,7 @@ class Change extends CI_Controller {
                     // update
                     $updateData = array(
                         'isemailverified' => 1,
-                        'isActive' => 1,
-                        'isemailverified' => 'abdulshakoornawaz@gmail.com',
+                        'isActive' => 1
 
                     );
 

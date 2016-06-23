@@ -10,7 +10,7 @@
     <div class="inner-bg">
         <div id="container">
             <div class="form-bottom">
-                <form role="form" action="<?php echo $root; ?>change/pass" method="post" class="registration-form">
+                <form role="form" action="<?php echo $root; ?>change/pass/<?php echo $uid; ?>" method="post" class="registration-form">
 
                     <div class="form-group">
                         <label class="sr-only" for="form-password">Password:</label>
