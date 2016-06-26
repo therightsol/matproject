@@ -15,7 +15,7 @@ class Change extends CI_Controller {
     }
 
 
-    public function pass($uid = '')
+    public function pass($email = '')
     {
 
 
@@ -23,11 +23,11 @@ class Change extends CI_Controller {
         $data['validation_errors'] = '';
         $data['activepage'] = 'changepass';
         $data['message_display']='';
-        $base_enc_username = $uid;
+        $base_enc_email = $email;
         $data['uid_empty'] = '';
         $data['user_notfound'] = '';
         $data['base_enc_username'] = '';
-        $data['uid'] = $uid;
+        $data['email'] = $email;
         $data['resetOK']= '';
 
         if (filter_input_array(INPUT_POST)) {
@@ -60,10 +60,23 @@ class Change extends CI_Controller {
                 // When Success
 
                 /*
+                 * Getting Email address from Encoded string.
+                 */
+                // Loading encryption library to encrypt username
+                $this->load->library('encrypt');
+
+                $this->load->model('basic_functions');
+                $encryptionKey = $this->basic_functions->getEncryptionKey();
+
+                $encodedEmail = base64_decode($base_enc_email);   // changing username to base64 algo.
+                $email = $this->encrypt->decode($encodedEmail, $encryptionKey);
+                //echo($email) . '<br /><br />'; exit;
+
+
+
+                /*
                  * getting record from register form
                  */
-
-                $email = $this->input->post('email', True);
                 $pass = $this->input->post('pass', True);
 
 
@@ -83,33 +96,39 @@ class Change extends CI_Controller {
                     $hashedPassword = password_hash($pass, PASSWORD_BCRYPT, $options);
 
                     /*
-                     * saving record
+                     * Updating record
                      */
 
-                    $this->user->email = $email;
-                    $this->user->password = $hashedPassword;
+                    $arr = array(
+                      'password' => $hashedPassword
+                    );
+                    $isSuccess = $this->user->updateRecord('email', $arr, $email);
 
 
-                    $this->user->updaterecord();
+
+                    if($isSuccess){
+                        // sends email
+                        /*
+                        * sending email
+                        *
+                        */
+                        $result = $this->send_email( $email );
+
+                        if ($result) {
+                            $data['resetOK'] = 'yes';
+                            $this->load->view('changepass', $data);
+                        } else {
+                            // show error.
+                            // Some internal error occured . Please contact to admin.
 
 
-                    /*
-                     * sending email
-                     *
-                     */
-                    $result = $this->send_email( $email);
+                        }
 
-                    if ($result) {
-                        $data['resetOK'] = 'yes';
-                        $this->load->view('changepass', $data);
-                    } else {
-                        // show error.
-                        // Some internal error occured . Please contact to admin.
+                    }else {
+                        // Display error
 
-
+                        // Some internal error occured.
                     }
-
-
                 } else {
                     // Show errors.
 
@@ -143,9 +162,9 @@ class Change extends CI_Controller {
 
 
     /*
-     * Sends Verifications Emails
+     * Sends Confirmation Emails
      */
-    private function send_email($username, $userEmail){
+    private function send_email($userEmail){
         /*
          * Send Email is Pending
          *  i)  Confirmation of email account.
@@ -153,25 +172,9 @@ class Change extends CI_Controller {
          *          -->     send email to Admin that a new user has been created. And set privilages for this user.
          */
 
-        // Loading encryption library to encrypt username
-        $this->load->library('encrypt');
 
-        $this->load->model('basic_functions');
-        $encryptionKey = $this->basic_functions->getEncryptionKey();
-        //exit($encryptionKey);
-
-        $encrypteUserName = $this->encrypt->encode($username, $encryptionKey);
-        //echo($encrypteUserName) . '<br /><br />';
-
-
-        $base64userName = base64_encode($encrypteUserName);   // changing username to base64 algo.
-        //echo $base64userName; exit();
-
-        $url = base_url() . 'change/pass/' . $base64userName;
-
-        $message = '<strong> Welcome! ' . $username . ' </strong><br /><br />'
-            . 'You are successfully updated. Please login. <br />'
-            . $url . '<br /><br /><br /><br /><br /><br /><br /><hr />'
+        $message = '<strong> Password Changed! </strong><br /><br />'
+            . 'You are successfully updated your password. <br /><br /><br /><hr />'
             . '<strong> Team MatProject</strong><br /><br />';
 
         $this->load->library('email');
@@ -180,13 +183,11 @@ class Change extends CI_Controller {
             ->from('trsolutions.trainingcenter@gmail.com')
             ->reply_to('trsolutions.trainingcenter@gmail.com')    // Optional, an account where a human being reads.
             ->to($userEmail)
-            ->subject('successfully updated password')
+            ->subject('Password Updated')
             ->message($message)
             ->send();
 
         return $result;
-
-
 
     }
 }
