@@ -33,6 +33,12 @@
                         <form role="form" action="<?php echo $root; ?>signin" method="post" class="Login-form">
 
                             <div class="form-group">
+                                <strong class="red">
+                                    <?php  if (isset($wrong_un_pass)) {
+                                        echo $wrong_un_pass;
+                                    }
+                                    ?>
+                                </strong>
                                 <label class="sr-only" for="form-user-name">User Name:</label>
                                 <?php if($_POST):
                                     echo form_error('un', '<strong class="red">', '</strong>');

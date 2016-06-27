@@ -46,7 +46,7 @@ class Signin extends CI_Controller {
                 $dbusername = $dbrecord->username;
                 $dbPass = $dbrecord->password;
 
-                if($dbusername == $username && password_verify($dbPass, $pass)){
+                if($dbusername == $username && password_verify($pass, $dbPass)){
                     // make session and redirect
 
                     $this->load->library('session');
@@ -63,6 +63,8 @@ class Signin extends CI_Controller {
 
                 }else {
                     // display error that provided username or password was wrong.
+                    $data['wrong_un_pass'] = 'Wrong username or password!';
+                    $this->load->view('signin', $data);
                 }
 
 
