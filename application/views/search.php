@@ -356,6 +356,34 @@
 
                     </div>
                 </div>
+
+            </div>
+            <div>
+                <br><br>
+                <h1 style="color: white;"><strong class="animated2">Search Results</strong></h1>
+                <br>
+                <?php foreach($username as $value): ?>
+                    <a href="#">
+                        <div class="row search-card">
+                            <br>
+                            <div class="col-sm-2"><img src="http://dummyimage.com/160x160/e33f58/ffffff.jpg&text=sample-image"></div>
+                            <div class="col-sm-6">
+                                <h3>Description</h3>
+                                <p>This is my description. im bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>Info</h3>
+                                <strong>Name:</strong><text style="text-align: right;"> <?php echo $value;?></text><br>
+                                <strong>Age:</strong><text style="text-align: right;">  17</text><br>
+                                <strong>Sex:</strong><text style="text-align: right;">  Male</text><br>
+                                <strong>Country:</strong><text style="text-align: right;">  Pakistan</text><br>
+
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                <?php endforeach;?>
+
             </div>
         </div>
     </div>
