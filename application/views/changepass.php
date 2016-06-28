@@ -6,11 +6,15 @@
 
 <?php include 'includes/navigation.inc';?>
 <!-- Top content -->
-<div class="top-content">
-    <div class="inner-bg">
-        <div id="container">
+
+        <div id="container-fluid col-lg-6">
+            <div class="row">
+                <div class="col-sm-7 text">
+                </div>
+                <div class="col-sm-5 form-box">
+            <?php if($updateOK != 'yes') : ?>
             <div class="form-bottom">
-                <form role="form" action="<?php echo $root; ?>change/pass/<?php echo $uid; ?>" method="post" class="registration-form">
+                <form role="form" action="<?php echo $root; ?>change/pass/<?php echo $email; ?>" method="post" class="registration-form">
 
                     <div class="form-group">
                         <label class="sr-only" for="form-password">Password:</label>
@@ -41,9 +45,13 @@
 
                 </div>
             </div>
-
+            <?php else: ?>
+                <div class="alert alert-success">
+                    You password  successfuly changed.  <br />
+                    Please Login.
+                    <a href="signin.php"></a>
+                </div>
+            <?php endif; // changedOK ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-

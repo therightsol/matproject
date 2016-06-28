@@ -9,6 +9,7 @@ class Via_email extends CI_Controller {
         $data['activepage'] = 'via_email';
         $data['validation_errors'] = '';
         $data['resetOK'] = '';
+        $data['message_display']='';
 
 
         if(filter_input_array(INPUT_POST)){
