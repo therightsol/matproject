@@ -28,7 +28,7 @@ class Change extends CI_Controller {
         $data['user_notfound'] = '';
         $data['base_enc_username'] = '';
         $data['email'] = $email;
-        $data['resetOK']= '';
+        $data['updateOK']= '';
 
         if (filter_input_array(INPUT_POST)) {
 
@@ -115,18 +115,16 @@ class Change extends CI_Controller {
                         $result = $this->send_email( $email );
 
                         if ($result) {
-                            $data['resetOK'] = 'yes';
+                            $data['updateOK'] = 'yes';
                             $this->load->view('changepass', $data);
                         } else {
                             // show error.
                             // Some internal error occured . Please contact to admin.
 
-
                         }
 
                     }else {
-                        // Display error
-
+                        // Display error.
                         // Some internal error occured.
                     }
                 } else {
