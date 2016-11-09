@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Change extends CI_Controller {
 
     public function index() {
+        /*This commit is on alishan branch -- after the master*/
         /* This is by ali shan on alishan - test branch ... */
         redirect('home');
         /*Here comment is closes on alishan - branch :P just testing buddy*/
